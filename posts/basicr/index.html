@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Basic R - Shawn&#39;s Homepage</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="Basic R" />
+<meta property="og:description" content="Basic R Note The most common use of R is to analyze and visualize data.
+In R, Comments starts with #.
+Variables A variable is created the moment you first assign a value to it (similar to Python). In order to assign a value to a variable, use &lt;-. &lt;&lt;- is global assigner. Multiple variables can be assigned with multiple &lt;- in one line. var1 &lt;- var2 &lt;- var3 &lt;- &#34;test_text&#34; variable names start with a letter and can be letters, digits, ." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zexuanmeng.github.io/posts/basicr/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-04T10:51:10-04:00" />
+<meta property="article:modified_time" content="2022-10-04T10:51:10-04:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Basic R"/>
+<meta name="twitter:description" content="Basic R Note The most common use of R is to analyze and visualize data.
+In R, Comments starts with #.
+Variables A variable is created the moment you first assign a value to it (similar to Python). In order to assign a value to a variable, use &lt;-. &lt;&lt;- is global assigner. Multiple variables can be assigned with multiple &lt;- in one line. var1 &lt;- var2 &lt;- var3 &lt;- &#34;test_text&#34; variable names start with a letter and can be letters, digits, ."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zexuanmeng.github.io/posts/basicr/" /><link rel="next" href="https://zexuanmeng.github.io/posts/hugo/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Basic R",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zexuanmeng.github.io\/posts\/basicr\/"
+        },"genre": "posts","wordcount":  680 ,
+        "url": "https:\/\/zexuanmeng.github.io\/posts\/basicr\/","datePublished": "2022-10-04T10:51:10-04:00","dateModified": "2022-10-04T10:51:10-04:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Zexuan Meng"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Shawn&#39;s Homepage">Home</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="About what I am working on recently"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/basicr/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Shawn&#39;s Homepage">Home</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="About what I am working on recently">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/basicr/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Basic R</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="10-04-2022">10-04-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;680 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#concatenate-elements">Concatenate elements</a></li>
+    <li><a href="#data-types">Data Types</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#numeric">Numeric</a></li>
+    <li><a href="#integer">Integer</a></li>
+    <li><a href="#complex">Complex</a></li>
+    <li><a href="#type-conversion">Type Conversion</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#arithmetic-operators">Arithmetic Operators</a></li>
+    <li><a href="#miscellaneous-operators">Miscellaneous Operators</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#while">while</a></li>
+    <li><a href="#for">for</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#vectors">Vectors</a></li>
+    <li><a href="#lists">Lists</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="basic-r-note">Basic R Note</h1>
+<p>The most common use of R is to <strong><strong>analyze</strong></strong> and <strong>visualize</strong> data.</p>
+<p>In R, <strong>Comments</strong> starts with <strong>#</strong>.</p>
+<h1 id="variables">Variables</h1>
+<ul>
+<li><strong>A variable is created the moment you first assign a value to it (similar to Python).</strong></li>
+<li>In order to assign a value to a variable, use <code>&lt;-</code>. <code>&lt;&lt;-</code> is global assigner.</li>
+<li>Multiple variables can be assigned with multiple <code>&lt;-</code> in one line.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="n">var1</span> <span class="o">&lt;-</span> <span class="n">var2</span> <span class="o">&lt;-</span> <span class="n">var3</span> <span class="o">&lt;-</span> <span class="s">&#34;test_text&#34;</span>
+</span></span></code></pre></div><ul>
+<li>variable names <strong>start with a letter</strong> and can be <strong>letters, digits, <code>.</code> and <code>_</code></strong>.
+<ul>
+<li>cannot start with a number or <code>_</code></li>
+<li>if start with <code>.</code>, cannot followed by a digit</li>
+<li><strong>Case-sensitive</strong></li>
+<li><strong>Reserved words cannot be used as variables</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="concatenate-elements">Concatenate elements</h2>
+<ul>
+<li>R provides <code>paste()</code> function to concatenate or join 2 or more elements. To combine, just use comma (<code>,</code>)</li>
+<li><strong>R will give an error, if you try to combine a string and a number with <code>+</code>.</strong></li>
+</ul>
+<h2 id="data-types">Data Types</h2>
+<ul>
+<li>We <strong>don&rsquo;t need to</strong> declare any particular data types and we <strong>can even change type</strong> after they have been set.</li>
+<li><strong>Basic data types</strong>
+<ul>
+<li><strong>numeric</strong></li>
+<li><strong>integer</strong></li>
+<li><strong>complex</strong></li>
+<li><strong>character</strong></li>
+<li><strong>logical</strong></li>
+</ul>
+</li>
+<li><code>class()</code> function can check the data type of the variable</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="c1"># numeric</span>
+</span></span><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="m">10.5</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="c1"># integer</span>
+</span></span><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="m">1000L</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="c1"># complex</span>
+</span></span><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="m">9i</span> <span class="o">+</span> <span class="m">3</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="c1"># character/string</span>
+</span></span><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="s">&#34;R is exciting&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="c1"># logical/boolean</span>
+</span></span><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="kc">TRUE</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="numbers">Numbers</h1>
+<p><strong>There are 3 types of number in R.</strong></p>
+<h2 id="numeric">Numeric</h2>
+<p>A <code>numeric</code> data type is the most common type in R, and contains any number <strong>with or without</strong> a decimal.</p>
+<h2 id="integer">Integer</h2>
+<ul>
+<li><strong>Integers are numeric data without decimals.</strong></li>
+<li><code>Integer</code> is used when you are certain that you will <strong>never</strong> create a variable that should contain decimals.</li>
+<li>To create an <code>integer</code> variable, you must use the letter <code>L</code> after the integer value</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="n">x</span> <span class="o">&lt;-</span> <span class="m">100L</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="complex">Complex</h2>
+<p>A <code>complex</code> number is written with an &ldquo;<code>i</code>&rdquo; as the imaginary part</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="n">y</span> <span class="o">&lt;-</span> <span class="m">4+5i</span>
+</span></span><span class="line"><span class="cl"> <span class="nf">class</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+</span></span></code></pre></div><h2 id="type-conversion">Type Conversion</h2>
+<ul>
+<li><code>as.numeric()</code></li>
+<li><code>as.integer()</code></li>
+<li><code>as.complex()</code></li>
+</ul>
+<h1 id="strings">Strings</h1>
+<ul>
+<li>String is always surrounded by <strong>single</strong> or <strong>double quotes</strong>.</li>
+<li>In R, you can assign multiline strings but R will add a &ldquo;<strong>\n</strong>&rdquo; at the end of each line break. To solve this problem, we can use <code>cat()</code></li>
+<li><code>nchar()</code> for string length</li>
+<li><code>grepl()</code> to check if a sequence of characters are in a string</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="nf">grepl</span><span class="p">(</span><span class="s">&#34;H&#34;</span><span class="p">,</span> <span class="s">&#34;Hello World&#34;</span><span class="p">)</span>
+</span></span></code></pre></div><ul>
+<li><code>paste()</code> combine 2 strings</li>
+</ul>
+<h1 id="math-functions">Math functions</h1>
+<ul>
+<li><code>min()</code>: min</li>
+<li><code>max()</code>: max</li>
+<li><code>sqrt()</code>: square root</li>
+<li><code>abs()</code>: absolute value</li>
+<li><code>ceiling()</code>: rounds a number upwards to its nearest integer</li>
+<li><code>floor()</code>: rounds a number downwards to its nearest integer</li>
+</ul>
+<h1 id="operators">Operators</h1>
+<h2 id="arithmetic-operators">Arithmetic Operators</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Operator</strong></th>
+<th><strong>Name</strong></th>
+<th><strong>Explain</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>+</strong></td>
+<td><strong>Addition</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>-</strong></td>
+<td><strong>Subtraction</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>*</td>
+<td><strong>Multiplication</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>/</strong></td>
+<td><strong>Division</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>^</strong></td>
+<td><strong>Exponent</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>%%</strong></td>
+<td><strong>Modulus</strong></td>
+<td><strong>Remainder from division</strong></td>
+</tr>
+<tr>
+<td><strong>%/%</strong></td>
+<td><strong>Integer Division</strong></td>
+<td><strong>round the result****down</strong>to the nearest integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="miscellaneous-operators">Miscellaneous Operators</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Operator</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>:</strong></td>
+<td><strong>Creates a series of numbers in a sequence</strong></td>
+</tr>
+<tr>
+<td><strong>%in%</strong></td>
+<td><strong>Find out if an element belongs to a vector</strong></td>
+</tr>
+<tr>
+<td><strong>%*%</strong></td>
+<td><strong>Matrix Multiplication</strong></td>
+</tr>
+</tbody>
+</table>
+<h1 id="if-else">if else</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">print</span><span class="p">(</span><span class="s">&#34;a is larger than b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span> <span class="n">else</span> <span class="nf">if </span><span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">print</span><span class="p">(</span><span class="s">&#34;a is equal to b&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">if </span><span class="p">(</span><span class="n">c</span> <span class="o">&lt;=</span> <span class="n">d</span> <span class="o">&amp;</span> <span class="n">e</span> <span class="o">&gt;=</span> <span class="n">f</span> <span class="o">|</span> <span class="n">g</span> <span class="o">==</span> <span class="n">h</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">     <span class="nf">print</span><span class="p">(</span><span class="s">&#34;nested easter egg&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">   <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span> <span class="n">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">print</span><span class="p">(</span><span class="s">&#34;error message&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></div><h1 id="loop">loop</h1>
+<h2 id="while">while</h2>
+<ul>
+<li><strong>break</strong></li>
+<li><strong>next: for skip (continue)</strong></li>
+</ul>
+<h2 id="for">for</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">10</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span></code></pre></div><h1 id="function">Function</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-R" data-lang="R"><span class="line"><span class="cl"> <span class="n">function_name</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">   <span class="nf">return </span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"> <span class="p">}</span>
+</span></span><span class="line"><span class="cl"> 
+</span></span><span class="line"><span class="cl"> <span class="nf">print</span><span class="p">(</span><span class="n">function_name</span><span class="p">)</span>
+</span></span></code></pre></div><h1 id="data-structure">Data Structure</h1>
+<h2 id="vectors">Vectors</h2>
+<ul>
+<li>To combine the list of items to a vector, use the <code>c()</code> function and separate the items by a comma.</li>
+<li>To create a vector with numerical values in a sequence, use the <code>:</code> operator</li>
+<li>To find out how many items a vector has, use the <code>length()</code> function</li>
+<li>To sort items in a vector alphabetically or numerically, use the <code>sort()</code> function</li>
+<li>To repeat vectors, use the <code>rep()</code> function</li>
+<li>To make bigger or smaller steps in a sequence, use the <code>seq()</code> function</li>
+</ul>
+<h2 id="lists">Lists</h2>
+<ul>
+<li>To create a list, use the <code>list()</code> function</li>
+<li>To find out how many items a list has, use the <code>length()</code> function</li>
+<li>To find out if a specified item is present in a list, use the <code>%in%</code> operator</li>
+<li>To add an item to the end of the list, use the <code>append()</code> function</li>
+<li>To join 2 list, use <code>c()</code></li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 10-04-2022</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/hugo/" class="next" rel="next" title="HUGO">HUGO<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

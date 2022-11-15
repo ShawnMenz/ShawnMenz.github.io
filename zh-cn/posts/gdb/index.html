@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>GDB - Shawn的个人主页</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="GDB" />
+<meta property="og:description" content="C/C&#43;&#43;调试过程 将main.c文件编译成可调式的exe $ gcc main.c -o main.exe -g 启动GDB调试 $ gdb main.exe 或免去免责声明输出 $ gdb main.exe --silent 常用调试命令 命令 作用 break b 在" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zexuanmeng.github.io/zh-cn/posts/gdb/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-05T16:20:32-04:00" />
+<meta property="article:modified_time" content="2022-08-05T16:20:32-04:00" /><meta property="og:site_name" content="Shawn的个人主页" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GDB"/>
+<meta name="twitter:description" content="C/C&#43;&#43;调试过程 将main.c文件编译成可调式的exe $ gcc main.c -o main.exe -g 启动GDB调试 $ gdb main.exe 或免去免责声明输出 $ gdb main.exe --silent 常用调试命令 命令 作用 break b 在"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zexuanmeng.github.io/zh-cn/posts/gdb/" /><link rel="next" href="https://zexuanmeng.github.io/zh-cn/posts/git/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "GDB",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zexuanmeng.github.io\/zh-cn\/posts\/gdb\/"
+        },"genre": "posts","wordcount":  525 ,
+        "url": "https:\/\/zexuanmeng.github.io\/zh-cn\/posts\/gdb\/","datePublished": "2022-08-05T16:20:32-04:00","dateModified": "2022-08-05T16:20:32-04:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Zexuan Meng"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Shawn的个人主页">Home</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/" title="我的笔记（中文）"> 博客 </a><a class="menu-item" href="/zh-cn/cv/" title="我的简历在这里"> 简历 </a><a class="menu-item" href="/zh-cn/work/" title="我最近在做什么"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/gdb/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Shawn的个人主页">Home</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="我的笔记（中文）">博客</a><a class="menu-item" href="/zh-cn/cv/" title="我的简历在这里">简历</a><a class="menu-item" href="/zh-cn/work/" title="我最近在做什么">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/gdb/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">GDB</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="08-05-2022">08-05-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 525 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#将mainc文件编译成可调式的exe">将main.c文件编译成可调式的exe</a></li>
+    <li><a href="#启动gdb调试">启动GDB调试</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="cc调试过程">C/C++调试过程</h1>
+<h2 id="将mainc文件编译成可调式的exe">将main.c文件编译成可调式的exe</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gcc main.c -o main.exe -g
+</span></span></code></pre></div><h2 id="启动gdb调试">启动GDB调试</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gdb main.exe
+</span></span></code></pre></div><p>或免去免责声明输出</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ gdb main.exe --silent
+</span></span></code></pre></div><h1 id="常用调试命令">常用调试命令</h1>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>break b</td>
+<td>在源代码指定的某一行设置断点，其中 xxx 用于指定具体打断点的位置。</td>
+</tr>
+<tr>
+<td>run r</td>
+<td>执行被调试的程序，其会自动在第一个断点处暂停执行。</td>
+</tr>
+<tr>
+<td>continue c</td>
+<td>当程序在某一断点处停止运行后，使用该指令可以继续执行，直至遇到下一个断点或者程序结束。</td>
+</tr>
+<tr>
+<td>next n</td>
+<td>令程序一行代码一行代码的执行。</td>
+</tr>
+<tr>
+<td>step s</td>
+<td>单步跟踪，可以跟踪到函数内部</td>
+</tr>
+<tr>
+<td>print p</td>
+<td>打印指定变量的值，其中 xxx 指的就是某一变量名。</td>
+</tr>
+<tr>
+<td>list l</td>
+<td>显示源程序代码的内容，包括各行代码所在的行号。</td>
+</tr>
+<tr>
+<td>quit q</td>
+<td>终止调试。</td>
+</tr>
+<tr>
+<td>backtrace bt</td>
+<td>查看函数调用栈帧和层级关系</td>
+</tr>
+</tbody>
+</table>
+<p>更多命令，在(gdb)下输入help查看</p>
+<h1 id="调试core文件">调试Core文件</h1>
+<p>设置Core文件大小为无限，不做修改可能不会有Core文件留下</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">ulimit</span> -c unlimited
+</span></span></code></pre></div><p>更改Core文件存储路径</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">echo</span> /path.%e.%p&gt; /proc/sys/kernel/core_pattern
+</span></span></code></pre></div><p>%e表示程序名，%p表示进程id
+然后gdb调试core即可，配合backtrace查看函数运行状况</p>
+<h1 id="断点调试">断点调试</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">break</span> xxx
+</span></span></code></pre></div><p>xxx可以是行号也可以是函数名，另一种设置行号的方式，比如调试test，要将断点设置在18行</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ b test.c:18
+</span></span></code></pre></div><p>使用if可以设置条件断点</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ <span class="nb">break</span> test.c:6 <span class="k">if</span> num&gt;0
+</span></span></code></pre></div><p>查看断点</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ info breakpoints
+</span></span></code></pre></div><p>查看断点之后，我们可以删除断点，其中breakpointnum是断点编号</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ delete breakpointnum
+</span></span></code></pre></div><h1 id="reference">Reference</h1>
+<p><a href="https://blog.csdn.net/chen1415886044/article/details/105094688" target="_blank" rel="noopener noreffer ">https://blog.csdn.net/chen1415886044/article/details/105094688</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 08-05-2022</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/zh-cn/posts/git/" class="next" rel="next" title="Git">Git<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Zexuan Meng</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

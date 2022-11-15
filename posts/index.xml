@@ -1,0 +1,55 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Shawn&#39;s Homepage</title>
+        <link>https://zexuanmeng.github.io/posts/</link>
+        <description>All Posts | Shawn&#39;s Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
+            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><lastBuildDate>Sun, 13 Nov 2022 22:24:38 -0500</lastBuildDate><atom:link href="https://zexuanmeng.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>UX Design</title>
+    <link>https://zexuanmeng.github.io/posts/uxdesign/</link>
+    <pubDate>Sun, 13 Nov 2022 22:24:38 -0500</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/uxdesign/</guid>
+    <description><![CDATA[The basics of user experience design Definitions User experience: How a person, the user, feels about interacting with, or experiencing, a product.
+Product: A good, service or feature.
+Characteristics of a good user experience Primary characteristics
+usable Equitable enjoyable useful User experience career Interaction designer: Interaction designers focus on designing the experience of a product and how it functions. Visual designer: Visual designers focus on how a product or technology looks.]]></description>
+</item>
+<item>
+    <title>SQL</title>
+    <link>https://zexuanmeng.github.io/posts/sql/</link>
+    <pubDate>Mon, 10 Oct 2022 17:46:08 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/sql/</guid>
+    <description><![CDATA[Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e.]]></description>
+</item>
+<item>
+    <title>Database</title>
+    <link>https://zexuanmeng.github.io/posts/database/</link>
+    <pubDate>Tue, 04 Oct 2022 23:17:07 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/database/</guid>
+    <description><![CDATA[Two approach to store data File based Approach Problems with the file-based approach Definition of data was embeded into the application programs, rather than being stored separately and independently No control over access and manipulation of data beyond that imposed by application programs Disadvantages to the file-based approach Separation and isolation of data Duplication of data Dependence between the application and the data store Incompatible file formats Programs are written to satisfy one specific data request Database Approach Problems with the database approach All data is pooled together, some data might not be shared with others Database View Allows each user to have his or her own definition of the database A view provides access to a subset of the database View mechanism is imperative if we want to secure the data Benefits Reduce complexity Provides a level of security Provides a mechanism to customize the appearance of the database Present a consistent, unchanging picture of the structure of the database, even when the underlying structure og the database has changed Database A database can be defined as a collection of logically related data from which users can efficiently retrieve the desired information.]]></description>
+</item>
+<item>
+    <title>HUGO</title>
+    <link>https://zexuanmeng.github.io/posts/hugo/</link>
+    <pubDate>Tue, 04 Oct 2022 22:47:27 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/hugo/</guid>
+    <description><![CDATA[Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
+cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml)
+theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily. For example, we add a new markdown file named first_post.]]></description>
+</item>
+<item>
+    <title>Basic R</title>
+    <link>https://zexuanmeng.github.io/posts/basicr/</link>
+    <pubDate>Tue, 04 Oct 2022 10:51:10 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/basicr/</guid>
+    <description><![CDATA[Basic R Note The most common use of R is to analyze and visualize data.
+In R, Comments starts with #.
+Variables A variable is created the moment you first assign a value to it (similar to Python). In order to assign a value to a variable, use &lt;-. &lt;&lt;- is global assigner. Multiple variables can be assigned with multiple &lt;- in one line. var1 &lt;- var2 &lt;- var3 &lt;- &#34;test_text&#34; variable names start with a letter and can be letters, digits, .]]></description>
+</item>
+</channel>
+</rss>

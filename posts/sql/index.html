@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>SQL - Shawn&#39;s Homepage</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="SQL" />
+<meta property="og:description" content="Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zexuanmeng.github.io/posts/sql/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-10-10T17:46:08-04:00" />
+<meta property="article:modified_time" content="2022-10-10T17:46:08-04:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="SQL"/>
+<meta name="twitter:description" content="Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zexuanmeng.github.io/posts/sql/" /><link rel="prev" href="https://zexuanmeng.github.io/posts/database/" /><link rel="next" href="https://zexuanmeng.github.io/posts/uxdesign/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "SQL",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zexuanmeng.github.io\/posts\/sql\/"
+        },"genre": "posts","wordcount":  1446 ,
+        "url": "https:\/\/zexuanmeng.github.io\/posts\/sql\/","datePublished": "2022-10-10T17:46:08-04:00","dateModified": "2022-10-10T17:46:08-04:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Zexuan Meng"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Shawn&#39;s Homepage">Home</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="About what I am working on recently"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/sql/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Shawn&#39;s Homepage">Home</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="About what I am working on recently">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/sql/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">SQL</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="10-10-2022">10-10-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1446 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;7 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sql-as-a-query-language">SQL as a query language</a></li>
+    <li><a href="#terminology">Terminology</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#query-process">Query process</a></li>
+    <li><a href="#select">SELECT</a>
+      <ul>
+        <li><a href="#as---defining-column-aliases">AS - Defining Column Aliases</a></li>
+        <li><a href="#limit---limit-the-rows-in-result-set">LIMIT - Limit the Rows in Result Set</a></li>
+        <li><a href="#order-by---specify-order-of-rows">ORDER BY - Specify Order of Rows</a></li>
+        <li><a href="#literals-expressions-and-calculations">Literals, Expressions and Calculations</a></li>
+        <li><a href="#built-in-functions">Built-in Functions</a></li>
+        <li><a href="#distinct---removing-duplicates">DISTINCT - Removing Duplicates</a></li>
+      </ul>
+    </li>
+    <li><a href="#conditioanl-expression">Conditioanl Expression</a>
+      <ul>
+        <li><a href="#where-clause">WHERE Clause</a></li>
+        <li><a href="#like---text-matching">LIKE - Text Matching</a></li>
+        <li><a href="#between---range">BETWEEN - Range</a></li>
+        <li><a href="#in---match-set">IN - Match Set</a></li>
+        <li><a href="#union---combining-query-results">UNION - Combining Query Results</a></li>
+        <li><a href="#example">Example</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</a>
+      <ul>
+        <li><a href="#inner-join">INNER JOIN</a></li>
+        <li><a href="#left-and-right-outer-joins">Left and Right Outer Joins</a></li>
+        <li><a href="#full-outer-joins">Full Outer Joins</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li><a href="#common-aggregation-functions">Common Aggregation Functions</a></li>
+    <li><a href="#group-by">GROUP BY</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#create-view">CREATE VIEW</a></li>
+    <li><a href="#common-uses-cases-for-views">Common Uses Cases for Views</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="role-of-sql">Role of SQL</h1>
+<h2 id="sql-as-a-query-language">SQL as a query language</h2>
+<ul>
+<li>SQL is the standard query language for retrieving data from relational databases</li>
+<li>SQL is a standard and is supported by virtually all relational databases in the same manner.</li>
+<li>Queries built for one database generally run without modification against another database.</li>
+<li>Many vendors provide extensions to SQL for analytics and special data types.</li>
+</ul>
+<h2 id="terminology">Terminology</h2>
+<table>
+<thead>
+<tr>
+<th><strong>Term</strong></th>
+<th><strong>Definition</strong></th>
+<th><strong>Alternate Terms</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Entity</strong></td>
+<td>A concept, event, role, place, or  physical object that must be tracked,<em>e.g.</em>, <em>Customer</em>.</td>
+<td><em>Class, Concept, Table</em></td>
+</tr>
+<tr>
+<td><strong>Attribute</strong></td>
+<td>A property of an entity,<em>e.g.</em>, <em>email</em>.</td>
+<td><em>Property, Variable, Feature,  Column, Dimension</em></td>
+</tr>
+<tr>
+<td><strong>Table</strong></td>
+<td>A database structure of columns and  rows in which an entities instances are stored and held in either memory or  on a storage device.</td>
+<td><em>Record, Relation, Entity</em></td>
+</tr>
+<tr>
+<td><strong>Column</strong></td>
+<td>An attribute of an entity stored in a  table.</td>
+<td><em>Attribute, Feature, Variable</em></td>
+</tr>
+<tr>
+<td><strong>Row</strong></td>
+<td>An instance of an entity stored in a  table.</td>
+<td><em>Observation, Record, Instance</em></td>
+</tr>
+<tr>
+<td><strong>Primary Key</strong></td>
+<td>One or more columns whose values  uniquely identify a row in a table.</td>
+<td><em>PK, Unique Identifier</em></td>
+</tr>
+<tr>
+<td><strong>Foreign Key</strong></td>
+<td>A reference to a row in another table  to which a row is related or linked.</td>
+<td><em>FK, Link, Reference, Pointer</em></td>
+</tr>
+<tr>
+<td><strong>Result Set</strong></td>
+<td>A temporary table that holds the result  of a SQL query.</td>
+<td><em>RS</em></td>
+</tr>
+<tr>
+<td><strong>Query</strong></td>
+<td>A SQL SELECT statement specifying which  rows should be retrieved from the database.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Entity-Relationship Diagram</strong></td>
+<td>A visualization of a relational data model.</td>
+<td><em>ERD, E-R Diagram, Logical Model</em></td>
+</tr>
+<tr>
+<td><strong>Crow’s Foot Notation</strong></td>
+<td>The colloquial term for E-R  Diagrams in the Information Engineering (IE)</td>
+<td><em>IE</em></td>
+</tr>
+<tr>
+<td><strong>IE</strong></td>
+<td>The name of a common notation for  E-R Diagrams using specific symbols for entities, keys, and relationships.</td>
+<td><em>Crow’s  Feet, ERD</em></td>
+</tr>
+<tr>
+<td><strong>DDL</strong></td>
+<td>The commands in SQL for defining  a relational database,<em>i.e.</em>, the tables, keys, and attributes along with their constraints.</td>
+<td><em>Data  Definition Language</em></td>
+</tr>
+<tr>
+<td><strong>DML</strong></td>
+<td>The SQL commands for manipulating  data in the database, including SELECT, UPDATE, DELETE, and INSERT.</td>
+<td><em>Data  Manipulation Language</em></td>
+</tr>
+<tr>
+<td><strong>SQL</strong></td>
+<td>DDL and DML statements for  generating, manipulating, and using relational databases.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Embedded SQL</strong></td>
+<td>SQL that is called from within a  host program written in a programming language such as R, Python, Java, C++,  C#, etc.</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Database Server</strong></td>
+<td>A program running on a computer  that manages the physical storage devices that contain the tables.</td>
+<td><em>DBMS,  Database Engine, Database</em></td>
+</tr>
+<tr>
+<td><strong>Schema</strong></td>
+<td>The table definitions for a  relational database.</td>
+<td><em>Relational  Schema, Physical Model</em></td>
+</tr>
+<tr>
+<td><strong>Ad Hoc Query</strong></td>
+<td>A SQL query that is interactively  issued from a console and that displays the result immediately in table form.</td>
+<td><em>Interactive  Query, Manual Query</em></td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>A collection of structured data  in records and organized in a way that makes the data retrievable</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="retrieving-data-from-a-single-table">Retrieving Data from a Single Table</h1>
+<h2 id="query-process">Query process</h2>
+<ul>
+<li>Client connects to a specific database on the database server by supplying connection parameters (IP address, username, password)</li>
+<li>Client stores connection information in a connection object</li>
+<li>Client issues a query by a sending SQL statement to the database server over the network connection using the connection object</li>
+<li>Server checks to ensure that connected user has permission to access data and that the SQL statement is syntactically correct</li>
+<li>Server optimizes query and formulates a query plan based on least cost for time and memory</li>
+<li>Server carries out the query by retrieving the data from the storage devices and packaging the result into a temporary table, the result set</li>
+<li>Server sends result set back to the client</li>
+<li>Client stores the result set in local memory and processes the data</li>
+<li>Client disconnects from the database by closing the connection to the server and releasing all resources</li>
+</ul>
+<h2 id="select">SELECT</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="n">columns</span><span class="p">]</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">tables</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">[</span><span class="k">column</span><span class="w"> </span><span class="n">conditions</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">[</span><span class="k">column</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">HAVING</span><span class="w"> </span><span class="p">[</span><span class="k">group</span><span class="w"> </span><span class="n">criteria</span><span class="p">]</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">[</span><span class="n">columns</span><span class="p">];</span><span class="w">
+</span></span></span></code></pre></div><h3 id="as---defining-column-aliases">AS - Defining Column Aliases</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FullName</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EMail</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="limit---limit-the-rows-in-result-set">LIMIT - Limit the Rows in Result Set</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FullName</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EMail</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="order-by---specify-order-of-rows">ORDER BY - Specify Order of Rows</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="literals-expressions-and-calculations">Literals, Expressions and Calculations</h3>
+<ul>
+<li>Literals are fixed values.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;En&#39;</span><span class="w"> </span><span class="n">lang</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>Queries can contain literals (a fixed value), expressions (including calculations), and various functions.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="n">Film</span><span class="w"> </span><span class="n">Title</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="k">length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">HRS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Film</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="built-in-functions">Built-in Functions</h3>
+<table>
+<thead>
+<tr>
+<th>ABS(m)</th>
+<th>MOD(m, n)</th>
+<th>POWER(m, n)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ROUND(m, [n])</strong></td>
+<td><strong>TRUNC(m [, n])</strong></td>
+<td><strong>FLOOR(n</strong></td>
+</tr>
+<tr>
+<td><strong>CEIL(n)</strong></td>
+<td><strong>SIGN(n)</strong></td>
+<td><strong>SQRT(n)</strong></td>
+</tr>
+<tr>
+<td><strong>LN(n)</strong></td>
+<td><strong>EXP(n)</strong></td>
+<td><strong>SIN(n)</strong></td>
+</tr>
+<tr>
+<td><strong>INITCAP(s)</strong></td>
+<td><strong>LOWER(s)</strong></td>
+<td><strong>UPPER(s)</strong></td>
+</tr>
+<tr>
+<td><strong>CONCAT(s1, s2)</strong></td>
+<td><strong>LENGTH(s)</strong></td>
+<td><strong>SUBSTR(s, m [, n])</strong></td>
+</tr>
+<tr>
+<td><strong>LTRIM(s [, set])</strong></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>ADD_MONTHS(d, n)</strong></td>
+<td><strong>LAST_DAY(d)</strong></td>
+<td><strong>MONTHS_BETWEEN(d, e)</strong></td>
+</tr>
+<tr>
+<td><strong>NEXT_DAY(d, day)</strong></td>
+<td><strong>SYSDATE</strong></td>
+<td>****</td>
+</tr>
+</tbody>
+</table>
+<h3 id="distinct---removing-duplicates">DISTINCT - Removing Duplicates</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h2 id="conditioanl-expression">Conditioanl Expression</h2>
+<h3 id="where-clause">WHERE Clause</h3>
+<ul>
+<li>The <code>WHERE</code> clause allows filtering of unwanted rows and only return select rows.</li>
+<li>When data is missing, it has the value <code>NULL</code> – which is no value at all.</li>
+<li>To ensure the correct evaluation of a logical expression, use parenthesis around the logical operators <strong>AND</strong>, <strong>OR</strong>, and <strong>NOT</strong>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rio Grande do Sul&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="like---text-matching">LIKE - Text Matching</h3>
+<ul>
+<li>The <code>LIKE</code> operator is used for partial string matching.</li>
+<li><code>%</code> Matches zero or more characters</li>
+<li><code>_</code> Matches exactly one character</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;_55%1212&#39;</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="between---range">BETWEEN - Range</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Payment</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="in---match-set">IN - Match Set</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">postal_code</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">45403</span><span class="p">,</span><span class="mi">29444</span><span class="p">,</span><span class="mi">26284</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>There are two existential qualifiers on sets
+<ul>
+<li><code>ANY</code></li>
+<li><code>ALL</code></li>
+</ul>
+</li>
+<li>These are often combined with the set membership test operators <code>IN</code> and <code>NOT IN</code>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ANY</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><h3 id="union---combining-query-results">UNION - Combining Query Results</h3>
+<ul>
+<li>Unions are combinations of two or more results sets into a single result set.</li>
+<li>The results sets must have the same number of columns with the same data types.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;IE&#39;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="example">Example</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">postal_code</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">45403</span><span class="p">,</span><span class="mi">29444</span><span class="p">,</span><span class="mi">26284</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="p">(</span><span class="n">postal_code</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="mi">66789</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">OR</span><span class="w"> </span><span class="n">postal_code</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="w"> </span><span class="mi">11887</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="p">((</span><span class="n">city_id</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">10000</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">city_id</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">800</span><span class="p">))</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%000&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">city_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h1 id="retrieving-data-from-multiple-tables">Retrieving Data from Multiple Tables</h1>
+<h2 id="join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</h2>
+<h3 id="inner-join">INNER JOIN</h3>
+<ul>
+<li>An <code>INNER JOIN</code> is an equi-join that selects rows that have matching values in both tables.</li>
+<li>The keyword <code>INNER</code> is optional.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">INNER</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Author</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">ON</span><span class="w"> </span><span class="n">Asset</span><span class="p">.</span><span class="n">auid</span><span class="w"> </span><span class="o">=</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">          </span><span class="n">Author</span><span class="p">.</span><span class="n">auid</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>SQL provides alternative syntax <code>JOIN USING</code> if the two tables are joined via the same column names</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="k">USING</span><span class="w"> </span><span class="p">(</span><span class="n">auid</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>A <code>NATURAL JOIN</code> automatically joins on columns that are named the same.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> </span><span class="k">NATURAL</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h3 id="left-and-right-outer-joins">Left and Right Outer Joins</h3>
+<ul>
+<li>The <em>Left Join</em> or <em>Left Outer Join</em> operation is a special type of join that takes two relations, <strong>A</strong> and <strong>B</strong>, and returns the inner join of <strong>A</strong> and <strong>B</strong> along with the unmatched rows of <strong>A</strong>.</li>
+<li><strong>A</strong> is the first relation defined in the <strong>FROM</strong> clause and is therefore the left relation.</li>
+<li>The left outer join includes the unmatched rows of the left relation along with the matched columns in the result.</li>
+<li><strong>A</strong> <em>Right Join</em> is analogous except that it takes the unmatched rows of the right relational <strong>B</strong>.</li>
+</ul>
+<h3 id="full-outer-joins">Full Outer Joins</h3>
+<ul>
+<li><strong>A</strong> full outer join takes two relations, <strong>A</strong> and <strong>B</strong>, and returns the inner join of <strong>A</strong> and <strong>B</strong> along with the unmatched rows of <strong>A</strong> and <strong>B</strong>.</li>
+<li>Essentially, a full outer join is the distinct union of a left and right outer join.</li>
+</ul>
+<h1 id="aggregation">Aggregation</h1>
+<h2 id="common-aggregation-functions">Common Aggregation Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MIN</td>
+<td>smallest value in a column</td>
+</tr>
+<tr>
+<td>MAX</td>
+<td>largest value in a column</td>
+</tr>
+<tr>
+<td>SUM</td>
+<td>sum of all values in a column</td>
+</tr>
+<tr>
+<td>AVG</td>
+<td>average (mean) value</td>
+</tr>
+<tr>
+<td>MEDIAN</td>
+<td>median value</td>
+</tr>
+<tr>
+<td>COUNT(*)</td>
+<td>number of rows in a table</td>
+</tr>
+<tr>
+<td>COUNT(col)</td>
+<td>number of non-NULL values in a column</td>
+</tr>
+<tr>
+<td>STDEV</td>
+<td>standard deviation</td>
+</tr>
+<tr>
+<td>VARIANCE</td>
+<td>variance (square of standard deviation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="group-by">GROUP BY</h2>
+<ul>
+<li>When aggregation functions are used in a query that includes a <code>GROUP BY</code> clause then the functions are applied to each group rather than a column.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="k">Type</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">AVG</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Average</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Total</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> </span><span class="n">a</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h1 id="grouping">Grouping</h1>
+<ul>
+<li>Generating Single-Column Groups</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">actor_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">film_actor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">actor_id</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><ul>
+<li>Grouping with Aggregate Functions</li>
+<li>Groups can be restricted (filtered) through the <code>HAVING</code> clause</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">actor_id</span><span class="p">,</span><span class="w"> </span><span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">n</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">film_actor</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">actor_id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">HAVING</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h1 id="views">Views</h1>
+<h2 id="create-view">CREATE VIEW</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">AuthorNM</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">(</span><span class="n">fullname</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">AS</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">substr</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;****&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">substr</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></div><h2 id="common-uses-cases-for-views">Common Uses Cases for Views</h2>
+<ul>
+<li>Define a view that contains select rows and columns and provides authorization for some users to access the view but not the underlying tables that define the view.</li>
+<li>Aggregate data from a complex query in a view to simplify common data access.</li>
+<li>Create views as alternatives to commonly used subqueries to make queries simpler and to provide a degree of reusability.</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 10-10-2022</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/database/" class="prev" rel="prev" title="Database"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Database</a>
+            <a href="/posts/uxdesign/" class="next" rel="next" title="UX Design">UX Design<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

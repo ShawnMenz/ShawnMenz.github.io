@@ -1,0 +1,32 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>所有文章 - Shawn的个人主页</title>
+        <link>https://zexuanmeng.github.io/zh-cn/posts/</link>
+        <description>所有文章 | Shawn的个人主页</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
+            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><lastBuildDate>Fri, 05 Aug 2022 16:21:36 -0400</lastBuildDate><atom:link href="https://zexuanmeng.github.io/zh-cn/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Shell</title>
+    <link>https://zexuanmeng.github.io/zh-cn/posts/shell/</link>
+    <pubDate>Fri, 05 Aug 2022 16:21:36 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/zh-cn/posts/shell/</guid>
+    <description><![CDATA[运行脚本之前 给予运行权限 $ chmod +x ./test.sh $ ./test.sh Shell变量 定义变量 var = &#34;This is a str&#34; a = 10 使用变量 变量名前加上$ echo命令可以打印出变量 只读变量 变量名前]]></description>
+</item>
+<item>
+    <title>Git</title>
+    <link>https://zexuanmeng.github.io/zh-cn/posts/git/</link>
+    <pubDate>Fri, 05 Aug 2022 16:21:07 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/zh-cn/posts/git/</guid>
+    <description><![CDATA[安装Git后 $ git config --global user.name &#34;Your Name&#34; $ git config --global user.email &#34;email@example.com&#34; 创建repository 将一个目录变成Git可以管理的仓库 $ git init 把文件添加到仓库 $ git add file.txt 将文件提交到仓]]></description>
+</item>
+<item>
+    <title>GDB</title>
+    <link>https://zexuanmeng.github.io/zh-cn/posts/gdb/</link>
+    <pubDate>Fri, 05 Aug 2022 16:20:32 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/zh-cn/posts/gdb/</guid>
+    <description><![CDATA[C/C++调试过程 将main.c文件编译成可调式的exe $ gcc main.c -o main.exe -g 启动GDB调试 $ gdb main.exe 或免去免责声明输出 $ gdb main.exe --silent 常用调试命令 命令 作用 break b 在]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,8 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Shawn&#39;s Homepage</title>
+        <link>https://zexuanmeng.github.io/tags/</link>
+        <description>Tags - Tag - Shawn&#39;s Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
+            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><atom:link href="https://zexuanmeng.github.io/tags/" rel="self" type="application/rss+xml" /></channel>
+</rss>

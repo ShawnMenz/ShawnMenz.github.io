@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Shell - Shawn的个人主页</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="Shell" />
+<meta property="og:description" content="运行脚本之前 给予运行权限 $ chmod &#43;x ./test.sh $ ./test.sh Shell变量 定义变量 var = &#34;This is a str&#34; a = 10 使用变量 变量名前加上$ echo命令可以打印出变量 只读变量 变量名前" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zexuanmeng.github.io/zh-cn/posts/shell/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-05T16:21:36-04:00" />
+<meta property="article:modified_time" content="2022-08-05T16:21:36-04:00" /><meta property="og:site_name" content="Shawn的个人主页" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shell"/>
+<meta name="twitter:description" content="运行脚本之前 给予运行权限 $ chmod &#43;x ./test.sh $ ./test.sh Shell变量 定义变量 var = &#34;This is a str&#34; a = 10 使用变量 变量名前加上$ echo命令可以打印出变量 只读变量 变量名前"/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://zexuanmeng.github.io/zh-cn/posts/shell/" /><link rel="prev" href="https://zexuanmeng.github.io/zh-cn/posts/git/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Shell",
+        "inLanguage": "zh-CN",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/zexuanmeng.github.io\/zh-cn\/posts\/shell\/"
+        },"genre": "posts","wordcount":  2576 ,
+        "url": "https:\/\/zexuanmeng.github.io\/zh-cn\/posts\/shell\/","datePublished": "2022-08-05T16:21:36-04:00","dateModified": "2022-08-05T16:21:36-04:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Zexuan Meng"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/zh-cn/" title="Shawn的个人主页">Home</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/zh-cn/posts/" title="我的笔记（中文）"> 博客 </a><a class="menu-item" href="/zh-cn/cv/" title="我的简历在这里"> 简历 </a><a class="menu-item" href="/zh-cn/work/" title="我最近在做什么"> 关于 </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="选择语言">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/zh-cn/posts/shell/" selected>简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/zh-cn/" title="Shawn的个人主页">Home</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/zh-cn/posts/" title="我的笔记（中文）">博客</a><a class="menu-item" href="/zh-cn/cv/" title="我的简历在这里">简历</a><a class="menu-item" href="/zh-cn/work/" title="我最近在做什么">关于</a><a href="javascript:void(0);" class="menu-item theme-switch" title="切换主题">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="选择语言">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/zh-cn/posts/shell/" selected>简体中文</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">目录</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Shell</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/zh-cn/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="08-05-2022">08-05-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 2576 字&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 6 分钟&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>目录</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#定义变量">定义变量</a></li>
+    <li><a href="#使用变量">使用变量</a></li>
+    <li><a href="#只读变量">只读变量</a></li>
+    <li><a href="#删除变量">删除变量</a></li>
+    <li><a href="#变量类型">变量类型</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#引号">引号</a></li>
+    <li><a href="#拼接字符串">拼接字符串</a></li>
+    <li><a href="#获取字符串长度">获取字符串长度</a></li>
+    <li><a href="#提取子字符串">提取子字符串</a></li>
+    <li><a href="#查找子字符串">查找子字符串</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#数组定义">数组定义</a></li>
+    <li><a href="#读取数组">读取数组</a></li>
+    <li><a href="#数组长度">数组长度</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#关系运算符">关系运算符</a></li>
+    <li><a href="#布尔运算符">布尔运算符</a></li>
+    <li><a href="#字符串运算符">字符串运算符</a></li>
+    <li><a href="#文件测试运算符">文件测试运算符</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#if-elif-else">if elif else</a></li>
+    <li><a href="#for">for</a></li>
+    <li><a href="#while">while</a></li>
+    <li><a href="#until">until</a></li>
+    <li><a href="#case">case</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="运行脚本之前">运行脚本之前</h1>
+<p>给予运行权限</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">$ chmod +x ./test.sh
+</span></span><span class="line"><span class="cl">$ ./test.sh
+</span></span></code></pre></div><h1 id="shell变量">Shell变量</h1>
+<h2 id="定义变量">定义变量</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">var</span> <span class="o">=</span> <span class="s2">&#34;This is a str&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">a</span> <span class="o">=</span> <span class="m">10</span>
+</span></span></code></pre></div><h2 id="使用变量">使用变量</h2>
+<ul>
+<li>变量名前加上$</li>
+<li>echo命令可以打印出变量</li>
+</ul>
+<h2 id="只读变量">只读变量</h2>
+<p>变量名前加上readonly</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">str</span> <span class="o">=</span> <span class="s2">&#34;This is a read only string&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">readonly</span> str
+</span></span></code></pre></div><h2 id="删除变量">删除变量</h2>
+<p>变量名前加上unset</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">a</span> <span class="o">=</span> <span class="m">10</span>
+</span></span><span class="line"><span class="cl"><span class="nb">unset</span> a
+</span></span></code></pre></div><h2 id="变量类型">变量类型</h2>
+<ul>
+<li><strong>局部变量</strong>：局部变量在脚本或命令中定义，仅在当前shell实例中有效，其他shell启动的程序不能访问局部变量</li>
+<li><strong>环境变量</strong>：所有的程序，包括shell启动的程序，都能访问环境变量，有些程序需要环境变量来保证其正常运行。必要的时候shell脚本也可以定义环境变量</li>
+<li><strong>shell变量</strong>：shell变量是由shell程序设置的特殊变量。shell变量中有一部分是环境变量，有一部分是局部变量，这些变量保证了shell的正常运行</li>
+</ul>
+<h1 id="字符串">字符串</h1>
+<h2 id="引号">引号</h2>
+<p>单引号</p>
+<ul>
+<li>单引号里的任何字符都会原样输出，单引号字符串中的变量是无效的</li>
+<li>单引号字串中不能出现单独一个的单引号（对单引号使用转义符后也不行），但可成对出现，作为字符串拼接使用
+双引号</li>
+<li>双引号里可以有变量</li>
+<li>双引号里可以出现转义字符</li>
+</ul>
+<h2 id="拼接字符串">拼接字符串</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">your_name</span><span class="o">=</span><span class="s2">&#34;shawn&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用双引号拼接</span>
+</span></span><span class="line"><span class="cl"><span class="nv">greeting</span><span class="o">=</span><span class="s2">&#34;hello, &#34;</span><span class="nv">$your_name</span><span class="s2">&#34; !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">greeting_1</span><span class="o">=</span><span class="s2">&#34;hello, </span><span class="si">${</span><span class="nv">your_name</span><span class="si">}</span><span class="s2"> !&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$greeting</span>  <span class="nv">$greeting_1</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用单引号拼接</span>
+</span></span><span class="line"><span class="cl"><span class="nv">greeting_2</span><span class="o">=</span><span class="s1">&#39;hello, &#39;</span><span class="nv">$your_name</span><span class="s1">&#39; !&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nv">greeting_3</span><span class="o">=</span><span class="s1">&#39;hello, ${your_name} !&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="nv">$greeting_2</span>  <span class="nv">$greeting_3</span>
+</span></span></code></pre></div><h2 id="获取字符串长度">获取字符串长度</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="si">${#</span><span class="nv">string</span><span class="si">}</span>
+</span></span></code></pre></div><h2 id="提取子字符串">提取子字符串</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 从第2个字符开始截取4个字符</span>
+</span></span><span class="line"><span class="cl"><span class="si">${</span><span class="nv">string</span><span class="p">:</span><span class="nv">1</span><span class="p">:</span><span class="nv">4</span><span class="si">}</span>
+</span></span></code></pre></div><h2 id="查找子字符串">查找子字符串</h2>
+<p>查找字符 i 或 o 的位置(哪个字母先出现就计算哪个)</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">string</span><span class="o">=</span><span class="s2">&#34;runoob is a great site&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="sb">`</span>expr index <span class="s2">&#34;</span><span class="nv">$string</span><span class="s2">&#34;</span> io<span class="sb">`</span>  <span class="c1"># 输出 4</span>
+</span></span></code></pre></div><p>注意： 以上脚本中 ` 是反引号，而不是单引号 '</p>
+<h1 id="数组">数组</h1>
+<p>Bash Shell支持一维数组且不支持多维数组，初始化的时候不需要定义数组大小</p>
+<h2 id="数组定义">数组定义</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">array_name</span><span class="o">=(</span>value0 value1 value2 value3<span class="o">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nv">array_name</span><span class="o">=(</span>
+</span></span><span class="line"><span class="cl">value0
+</span></span><span class="line"><span class="cl">value1
+</span></span><span class="line"><span class="cl">value2
+</span></span><span class="line"><span class="cl">value3
+</span></span><span class="line"><span class="cl"><span class="o">)</span>
+</span></span></code></pre></div><h2 id="读取数组">读取数组</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 单个元素</span>
+</span></span><span class="line"><span class="cl"><span class="nv">valuen</span><span class="o">=</span><span class="si">${</span><span class="nv">array_name</span><span class="p">[n]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#所有元素</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="si">${</span><span class="nv">array_name</span><span class="p">[@]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="si">${</span><span class="nv">array_name</span><span class="p">[*]</span><span class="si">}</span>
+</span></span></code></pre></div><h2 id="数组长度">数组长度</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 取得数组元素的个数</span>
+</span></span><span class="line"><span class="cl"><span class="nv">length</span><span class="o">=</span><span class="si">${#</span><span class="nv">array_name</span><span class="p">[@]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 或者</span>
+</span></span><span class="line"><span class="cl"><span class="nv">length</span><span class="o">=</span><span class="si">${#</span><span class="nv">array_name</span><span class="p">[*]</span><span class="si">}</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 取得数组单个元素的长度</span>
+</span></span><span class="line"><span class="cl"><span class="nv">lengthn</span><span class="o">=</span><span class="si">${#</span><span class="nv">array_name</span><span class="p">[n]</span><span class="si">}</span>
+</span></span></code></pre></div><h1 id="传递参数">传递参数</h1>
+<table>
+<thead>
+<tr>
+<th>参数处理</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$#</td>
+<td>传递到脚本的参数个数</td>
+</tr>
+<tr>
+<td>$*</td>
+<td>以一个单字符串显示所有向脚本传递的参数。如&quot;$*&ldquo;用「&quot;」括起来的情况、以&rdquo;$1 $2 … $n&quot;的形式输出所有参数。</td>
+</tr>
+<tr>
+<td>$$</td>
+<td>脚本运行的当前进程ID号</td>
+</tr>
+<tr>
+<td>$!</td>
+<td>后台运行的最后一个进程的ID号</td>
+</tr>
+<tr>
+<td>$@</td>
+<td>与$*相同，但是使用时加引号，并在引号中返回每个参数。如&quot;$@&ldquo;用「&quot;」括起来的情况、以&rdquo;$1&quot; &ldquo;$2&rdquo; … &ldquo;$n&rdquo; 的形式输出所有参数</td>
+</tr>
+<tr>
+<td>$-</td>
+<td>显示Shell使用的当前选项，与set命令功能相同</td>
+</tr>
+<tr>
+<td>$?</td>
+<td>显示最后命令的退出状态。0表示没有错误，其他任何值表明有错误</td>
+</tr>
+</tbody>
+</table>
+<p><em><em>$</em> 与 $@</em>*</p>
+<ul>
+<li>相同点：都是引用所有参数</li>
+<li>不同点：只有在双引号中体现出来。假设在脚本运行时写了三个参数 1、2、3，则 &quot; * &quot; 等价于 &ldquo;1 2 3&rdquo;（传递了一个参数），而 &ldquo;@&rdquo; 等价于 &ldquo;1&rdquo; &ldquo;2&rdquo; &ldquo;3&rdquo;（传递了三个参数）</li>
+</ul>
+<h1 id="shell运算符">Shell运算符</h1>
+<ul>
+<li>原生bash不支持简单的数学运算，但是可以通过其他命令来实现，例如 awk 和 expr。<strong>expr 最常用</strong></li>
+<li>表达式和运算符之间<strong>要有空格</strong>，例如 2+2 是不对的，必须写成 2 + 2</li>
+<li>完整的表达式要被 ` ` 包含，注意这个字符不是常用的单引号而是反引号</li>
+<li>算术运算符即常规的：+ - * / % = == !=</li>
+<li>逻辑运算符即常规的：&amp;&amp; ||</li>
+</ul>
+<h2 id="关系运算符">关系运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>检测两个数是否相等，相等返回 true</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>检测两个数是否不相等，不相等返回 true</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>检测左边的数是否大于右边的，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>检测左边的数是否小于右边的，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>检测左边的数是否大于等于右边的，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>检测左边的数是否小于等于右边的，如果是，则返回 true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="布尔运算符">布尔运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>!</td>
+<td>非运算，表达式为 true 则返回 false，否则返回 true</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>或运算，有一个表达式为 true 则返回 true</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>与运算，两个表达式都为 true 才返回 true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符串运算符">字符串运算符</h2>
+<table>
+<thead>
+<tr>
+<th>运算符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>=</td>
+<td>检测两个字符串是否相等，相等返回 true</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>检测两个字符串是否不相等，不相等返回 true</td>
+</tr>
+<tr>
+<td>-z</td>
+<td>检测字符串长度是否为0，为0返回 true</td>
+</tr>
+<tr>
+<td>-n</td>
+<td>检测字符串长度是否不为 0，不为 0 返回 true</td>
+</tr>
+<tr>
+<td>$</td>
+<td>检测字符串是否为空，不为空返回 true</td>
+</tr>
+</tbody>
+</table>
+<h2 id="文件测试运算符">文件测试运算符</h2>
+<table>
+<thead>
+<tr>
+<th>操作符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b file</td>
+<td>检测文件是否是块设备文件，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-c file</td>
+<td>检测文件是否是字符设备文件，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-d file</td>
+<td>检测文件是否是目录，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-f file</td>
+<td>检测文件是否是普通文件（既不是目录，也不是设备文件，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-g file</td>
+<td>检测文件是否设置了 SGID 位，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-k file</td>
+<td>检测文件是否设置了粘着位(Sticky Bit)，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-p file</td>
+<td>检测文件是否是有名管道，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-u file</td>
+<td>检测文件是否设置了 SUID 位，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-r file</td>
+<td>检测文件是否可读，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-w file</td>
+<td>检测文件是否可写，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-x file</td>
+<td>检测文件是否可执行，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>-s file</td>
+<td>检测文件是否为空（文件大小是否大于0，不为空返回 true</td>
+</tr>
+<tr>
+<td>-e file</td>
+<td>检测文件（包括目录）是否存在，如果是，则返回 true</td>
+</tr>
+<tr>
+<td>其他检查符：</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>-S: 判断某文件是否 socket</li>
+<li>-L: 检测文件是否存在并且是一个符号链接</li>
+</ul>
+<h1 id="echo命令">echo命令</h1>
+<ul>
+<li>用于字符串输出</li>
+<li>显示普通字符串的时候也可以不用加双引号</li>
+<li>可以使用\来显示转义字符</li>
+<li>变量显示要用$修饰</li>
+<li>换行使用\n，不换行使用\c</li>
+<li>使用-e开启转义</li>
+<li>重定向向文件，使用&gt;</li>
+<li>使用单引号，原样输出不转义或取变量（前面有提到）</li>
+<li>使用反引号，输出执行命令的结果，例如</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># 输出当前日期</span>
+</span></span><span class="line"><span class="cl"><span class="nb">echo</span> <span class="sb">`</span>date<span class="sb">`</span>
+</span></span></code></pre></div><h1 id="printf命令">Printf命令</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nb">printf</span>  format-string  <span class="o">[</span>arguments...<span class="o">]</span>
+</span></span></code></pre></div><p>参数说明：</p>
+<ul>
+<li>format-string: 为格式控制字符串</li>
+<li>arguments: 为参数列表</li>
+</ul>
+<h1 id="流程控制">流程控制</h1>
+<h2 id="if-elif-else">if elif else</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">if</span> condition
+</span></span><span class="line"><span class="cl"><span class="k">then</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">elif</span> condition
+</span></span><span class="line"><span class="cl"><span class="k">then</span> 
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">else</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">fi</span>
+</span></span></code></pre></div><h2 id="for">for</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">for</span> var in items
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><h2 id="while">while</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">while</span> condition
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><h2 id="until">until</h2>
+<ul>
+<li>until 循环执行一系列命令直至条件为 true 时停止。</li>
+<li>until 循环与 while 循环在处理方式上刚好相反</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">until</span> condition
+</span></span><span class="line"><span class="cl"><span class="k">do</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl"><span class="k">done</span>
+</span></span></code></pre></div><h2 id="case">case</h2>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="k">case</span> value in
+</span></span><span class="line"><span class="cl">    1<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl">    2<span class="o">)</span>
+</span></span><span class="line"><span class="cl">    commands
+</span></span><span class="line"><span class="cl">    <span class="p">;;</span>
+</span></span><span class="line"><span class="cl"><span class="k">esac</span>
+</span></span></code></pre></div><h1 id="函数">函数</h1>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="o">[</span> <span class="k">function</span> <span class="o">]</span> funname <span class="o">[()]</span>
+</span></span><span class="line"><span class="cl"><span class="o">{</span>
+</span></span><span class="line"><span class="cl">    action<span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">[</span><span class="k">return</span> int<span class="p">;</span><span class="o">]</span>
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
+</span></span></code></pre></div><ul>
+<li>方括号代表可选值</li>
+<li>可以带function fun() 定义，也可以直接fun() 定义,不带任何参数。</li>
+<li>参数返回，可以显示加：return 返回，如果不加，将以最后一条命令运行结果，作为返回值。 return后跟数值n(0-255)</li>
+</ul>
+<h1 id="输入输出重定向">输入输出重定向</h1>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command &gt; file</td>
+<td>将输出重定向到 file</td>
+</tr>
+<tr>
+<td>command &lt; file</td>
+<td>将输入重定向到 file</td>
+</tr>
+<tr>
+<td>command &raquo; file</td>
+<td>将输出以追加的方式重定向到 file</td>
+</tr>
+<tr>
+<td>n &gt; file</td>
+<td>将文件描述符为 n 的文件重定向到 file</td>
+</tr>
+<tr>
+<td>n &raquo; file</td>
+<td>将文件描述符为 n 的文件以追加的方式重定向到 file</td>
+</tr>
+<tr>
+<td>n &gt;&amp; m</td>
+<td>将输出文件 m 和 n 合并</td>
+</tr>
+<tr>
+<td>n &lt;&amp; m</td>
+<td>将输入文件 m 和 n 合并</td>
+</tr>
+<tr>
+<td>&laquo; tag</td>
+<td>将开始标记 tag 和结束标记 tag 之间的内容作为输入</td>
+</tr>
+<tr>
+<td>文件描述符：</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>0 是标准输入（STDIN）</li>
+<li>1 是标准输出（STDOUT）</li>
+<li>2 是标准错误输出（STDERR）</li>
+</ul>
+<h1 id="devnull-文件">/dev/null 文件</h1>
+<ul>
+<li>如果希望执行某个命令，但又不希望在屏幕上显示输出结果，那么可以将输出重定向到 /dev/null</li>
+<li>/dev/null 是一个特殊的文件，写入到它的内容都会被丢弃；如果尝试从该文件读取内容，那么什么也读不到。但是 /dev/null 文件非常有用，将命令的输出重定向到它，会起到&quot;禁止输出&quot;的效果</li>
+</ul>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>更新于 08-05-2022</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">返回</a></span>&nbsp;|&nbsp;<span><a href="/zh-cn/">主页</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/zh-cn/posts/git/" class="prev" rel="prev" title="Git"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Git</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/zh-cn/" target="_blank">Zexuan Meng</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="回到顶部">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
