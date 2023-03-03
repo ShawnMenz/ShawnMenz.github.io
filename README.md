@@ -2,6 +2,10 @@
 
 ## Version 2
 
+### 2.3
+
+- Implement Category function, blogs are organized well now.
+
 ### 2.2.1
 
 * I migrate the old repo from my git student account to current account. After I graduate, my college will take back the email. In that case, it will be troublesome to maintain the account.

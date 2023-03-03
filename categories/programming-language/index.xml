@@ -1,0 +1,28 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Programming Language - Category - Shawn&#39;s Homepage</title>
+        <link>https://zexuanmeng.github.io/categories/programming-language/</link>
+        <description>Programming Language - Category - Shawn&#39;s Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
+            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><lastBuildDate>Tue, 04 Oct 2022 22:47:27 -0400</lastBuildDate><atom:link href="https://zexuanmeng.github.io/categories/programming-language/" rel="self" type="application/rss+xml" /><item>
+    <title>HUGO</title>
+    <link>https://zexuanmeng.github.io/posts/hugo/</link>
+    <pubDate>Tue, 04 Oct 2022 22:47:27 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/hugo/</guid>
+    <description><![CDATA[Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
+cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml)
+theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily. For example, we add a new markdown file named first_post.]]></description>
+</item>
+<item>
+    <title>Basic R</title>
+    <link>https://zexuanmeng.github.io/posts/basicr/</link>
+    <pubDate>Tue, 04 Oct 2022 10:51:10 -0400</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://zexuanmeng.github.io/posts/basicr/</guid>
+    <description><![CDATA[Basic R Note The most common use of R is to analyze and visualize data.
+In R, Comments starts with #.
+Variables A variable is created the moment you first assign a value to it (similar to Python). In order to assign a value to a variable, use &lt;-. &lt;&lt;- is global assigner. Multiple variables can be assigned with multiple &lt;- in one line. var1 &lt;- var2 &lt;- var3 &lt;- &#34;test_text&#34; variable names start with a letter and can be letters, digits, .]]></description>
+</item>
+</channel>
+</rss>

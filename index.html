@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-	<meta name="generator" content="Hugo 0.100.1" />
+	<meta name="generator" content="Hugo 0.110.0">
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
@@ -9,7 +9,6 @@
 <meta property="og:description" content="Learn and Note" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://zexuanmeng.github.io/" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
-
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Shawn&#39;s Homepage"/>
 <meta name="twitter:description" content="Learn and Note"/>
@@ -37,7 +36,18 @@
             <a href="/" title="Shawn&#39;s Homepage">Home</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="About what I am working on recently"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="About what I am working on recently"> About </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
@@ -55,15 +65,36 @@
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="About what I am working on recently">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="About what I am working on recently">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
                     <select class="language-select" onchange="location = this.value;"><option value="/" selected>English</option><option value="/zh-cn/">简体中文</option></select>
                 </a></div>
     </div>
-</header><main class="main">
-                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-avatar"><a href="/posts/" title="Archive of all of my blogs"><img
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="page home" data-home="posts"><div class="home-profile"><div class="home-avatar"><a href="/categories/" title="Categories of my blogs"><img
         class="lazyload"
         src="/svg/loading.min.svg"
         data-src="/img/avatar.jpg"
@@ -73,35 +104,35 @@
         title="/img/avatar.jpg" /></a></div><div class="home-subtitle"><div id="id-1" class="typeit"></div></div><div class="links"><a href="https://github.com//ZexuanMeng" title="GitHub" target="_blank" rel="noopener noreffer me"><i class="fab fa-github fa-fw" aria-hidden="true"></i></a><a href="https://linkedin.com/in//zexuan-meng-a2610822b/" title="LinkedIn" target="_blank" rel="noopener noreffer me"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="mailto:meng.ze@northeastern.edu" title="Email" rel="me"><i class="far fa-envelope fa-fw" aria-hidden="true"></i></a></div></div>
 <article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/uxdesign/">UX Design</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="11-13-2022">11-13-2022</time></span></div><div class="content">The basics of user experience design Definitions User experience: How a person, the user, feels about interacting with, or experiencing, a product.
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="11-13-2022">11-13-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/ux-design/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>UX Design</a></span></div><div class="content">The basics of user experience design Definitions User experience: How a person, the user, feels about interacting with, or experiencing, a product.
 Product: A good, service or feature.
 Characteristics of a good user experience Primary characteristics
 usable Equitable enjoyable useful User experience career Interaction designer: Interaction designers focus on designing the experience of a product and how it functions. Visual designer: Visual designers focus on how a product or technology looks.</div><div class="post-footer">
         <a href="/posts/uxdesign/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/sql/">SQL</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-10-2022">10-10-2022</time></span></div><div class="content">Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e.</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-10-2022">10-10-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/database/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Database</a></span></div><div class="content">Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e.</div><div class="post-footer">
         <a href="/posts/sql/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/database/">Database</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span></div><div class="content">Two approach to store data File based Approach Problems with the file-based approach Definition of data was embeded into the application programs, rather than being stored separately and independently No control over access and manipulation of data beyond that imposed by application programs Disadvantages to the file-based approach Separation and isolation of data Duplication of data Dependence between the application and the data store Incompatible file formats Programs are written to satisfy one specific data request Database Approach Problems with the database approach All data is pooled together, some data might not be shared with others Database View Allows each user to have his or her own definition of the database A view provides access to a subset of the database View mechanism is imperative if we want to secure the data Benefits Reduce complexity Provides a level of security Provides a mechanism to customize the appearance of the database Present a consistent, unchanging picture of the structure of the database, even when the underlying structure og the database has changed Database A database can be defined as a collection of logically related data from which users can efficiently retrieve the desired information.</div><div class="post-footer">
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/database/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Database</a></span></div><div class="content">Two approach to store data File based Approach Problems with the file-based approach Definition of data was embeded into the application programs, rather than being stored separately and independently No control over access and manipulation of data beyond that imposed by application programs Disadvantages to the file-based approach Separation and isolation of data Duplication of data Dependence between the application and the data store Incompatible file formats Programs are written to satisfy one specific data request Database Approach Problems with the database approach All data is pooled together, some data might not be shared with others Database View Allows each user to have his or her own definition of the database A view provides access to a subset of the database View mechanism is imperative if we want to secure the data Benefits Reduce complexity Provides a level of security Provides a mechanism to customize the appearance of the database Present a consistent, unchanging picture of the structure of the database, even when the underlying structure og the database has changed Database A database can be defined as a collection of logically related data from which users can efficiently retrieve the desired information.</div><div class="post-footer">
         <a href="/posts/database/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/hugo/">HUGO</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span></div><div class="content">Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming-language/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming Language</a></span></div><div class="content">Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
 cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml)
 theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily. For example, we add a new markdown file named first_post.</div><div class="post-footer">
         <a href="/posts/hugo/">Read More</a></div>
 </article><article class="single summary" itemscope itemtype="http://schema.org/Article"><h1 class="single-title" itemprop="name headline">
         <a href="/posts/basicr/">Basic R</a>
-    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span></div><div class="content">Basic R Note The most common use of R is to analyze and visualize data.
+    </h1><div class="post-meta"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-publish">published on <time datetime="10-04-2022">10-04-2022</time></span>&nbsp;<span class="post-category">included in <a href="/categories/programming-language/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Programming Language</a></span></div><div class="content">Basic R Note The most common use of R is to analyze and visualize data.
 In R, Comments starts with #.
 Variables A variable is created the moment you first assign a value to it (similar to Python). In order to assign a value to a variable, use &lt;-. &lt;&lt;- is global assigner. Multiple variables can be assigned with multiple &lt;- in one line. var1 &lt;- var2 &lt;- var3 &lt;- &#34;test_text&#34; variable names start with a letter and can be letters, digits, .</div><div class="post-footer">
         <a href="/posts/basicr/">Read More</a></div>
 </article></div></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.100.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.110.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
         </div>
     </footer></div>
 
@@ -110,5 +141,5 @@ Variables A variable is created the moment you first assign a value to it (simil
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"data":{"id-1":"Learn and Note"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.38.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lunr@2.3.9/lunr.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/typeit@8.6.0/dist/index.umd.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"data":{"id-1":"Learn and Note"},"search":{"highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"]},"duration":-1,"speed":100}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>
