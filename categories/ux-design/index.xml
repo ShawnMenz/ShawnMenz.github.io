@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>UX Design - Category - Shawn&#39;s Homepage</title>
-        <link>https://zexuanmeng.github.io/categories/ux-design/</link>
+        <link>https://shawnmenz.github.io/categories/ux-design/</link>
         <description>UX Design - Category - Shawn&#39;s Homepage</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
-            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><lastBuildDate>Sun, 13 Nov 2022 22:24:38 -0500</lastBuildDate><atom:link href="https://zexuanmeng.github.io/categories/ux-design/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Sun, 13 Nov 2022 22:24:38 -0500</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/ux-design/" rel="self" type="application/rss+xml" /><item>
     <title>UX Design</title>
-    <link>https://zexuanmeng.github.io/posts/uxdesign/</link>
+    <link>https://shawnmenz.github.io/posts/uxdesign/</link>
     <pubDate>Sun, 13 Nov 2022 22:24:38 -0500</pubDate>
     <author>Zexuan Meng</author>
-    <guid>https://zexuanmeng.github.io/posts/uxdesign/</guid>
+    <guid>https://shawnmenz.github.io/posts/uxdesign/</guid>
     <description><![CDATA[The basics of user experience design Definitions User experience: How a person, the user, feels about interacting with, or experiencing, a product.
 Product: A good, service or feature.
 Characteristics of a good user experience Primary characteristics

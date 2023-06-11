@@ -1,23 +1,23 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Database - Category - Shawn&#39;s Homepage</title>
-        <link>https://zexuanmeng.github.io/categories/database/</link>
+        <link>https://shawnmenz.github.io/categories/database/</link>
         <description>Database - Category - Shawn&#39;s Homepage</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>meng.ze@northeastern.edu (Zexuan Meng)</managingEditor>
-            <webMaster>meng.ze@northeastern.edu (Zexuan Meng)</webMaster><lastBuildDate>Mon, 10 Oct 2022 17:46:08 -0400</lastBuildDate><atom:link href="https://zexuanmeng.github.io/categories/database/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Mon, 10 Oct 2022 17:46:08 -0400</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/database/" rel="self" type="application/rss+xml" /><item>
     <title>SQL</title>
-    <link>https://zexuanmeng.github.io/posts/sql/</link>
+    <link>https://shawnmenz.github.io/posts/sql/</link>
     <pubDate>Mon, 10 Oct 2022 17:46:08 -0400</pubDate>
     <author>Zexuan Meng</author>
-    <guid>https://zexuanmeng.github.io/posts/sql/</guid>
+    <guid>https://shawnmenz.github.io/posts/sql/</guid>
     <description><![CDATA[Role of SQL SQL as a query language SQL is the standard query language for retrieving data from relational databases SQL is a standard and is supported by virtually all relational databases in the same manner. Queries built for one database generally run without modification against another database. Many vendors provide extensions to SQL for analytics and special data types. Terminology Term Definition Alternate Terms Entity A concept, event, role, place, or physical object that must be tracked,e.]]></description>
 </item>
 <item>
     <title>Database</title>
-    <link>https://zexuanmeng.github.io/posts/database/</link>
+    <link>https://shawnmenz.github.io/posts/database/</link>
     <pubDate>Tue, 04 Oct 2022 23:17:07 -0400</pubDate>
     <author>Zexuan Meng</author>
-    <guid>https://zexuanmeng.github.io/posts/database/</guid>
+    <guid>https://shawnmenz.github.io/posts/database/</guid>
     <description><![CDATA[Two approach to store data File based Approach Problems with the file-based approach Definition of data was embeded into the application programs, rather than being stored separately and independently No control over access and manipulation of data beyond that imposed by application programs Disadvantages to the file-based approach Separation and isolation of data Duplication of data Dependence between the application and the data store Incompatible file formats Programs are written to satisfy one specific data request Database Approach Problems with the database approach All data is pooled together, some data might not be shared with others Database View Allows each user to have his or her own definition of the database A view provides access to a subset of the database View mechanism is imperative if we want to secure the data Benefits Reduce complexity Provides a level of security Provides a mechanism to customize the appearance of the database Present a consistent, unchanging picture of the structure of the database, even when the underlying structure og the database has changed Database A database can be defined as a collection of logically related data from which users can efficiently retrieve the desired information.]]></description>
 </item>
 </channel>
