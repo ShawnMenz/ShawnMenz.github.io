@@ -4,9 +4,18 @@
         <link>https://shawnmenz.github.io/</link>
         <description>Learn and Note</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
-            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Sun, 13 Nov 2022 22:24:38 -0500</lastBuildDate>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Sat, 09 Dec 2023 14:19:21 -0600</lastBuildDate>
             <atom:link href="https://shawnmenz.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Docker</title>
+    <link>https://shawnmenz.github.io/posts/docker/</link>
+    <pubDate>Sat, 09 Dec 2023 14:19:21 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/docker/</guid>
+    <description><![CDATA[An Introduction In the past, transitioning a software application from code to production was a painfully slow process. Developers often struggled with the tedious task of managing dependencies while setting up their test and production environments. Docker, a type of container technology, emerged as a solution to alleviate this pain.
+From Bare Metal to Docker Bare Metal: The applications ran directly on the physical server (Bare Metal). Teams purchased, racked, stacked, powered on, and configured every new machine.]]></description>
+</item>
+<item>
     <title>UX Design</title>
     <link>https://shawnmenz.github.io/posts/uxdesign/</link>
     <pubDate>Sun, 13 Nov 2022 22:24:38 -0500</pubDate>
