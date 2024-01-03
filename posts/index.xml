@@ -4,7 +4,25 @@
         <link>https://shawnmenz.github.io/posts/</link>
         <description>All Posts | Shawn&#39;s Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
-            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Sat, 09 Dec 2023 14:19:21 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Tue, 02 Jan 2024 16:05:41 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>A Brief Introduction of LLM</title>
+    <link>https://shawnmenz.github.io/posts/llm/</link>
+    <pubDate>Tue, 02 Jan 2024 16:05:41 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/llm/</guid>
+    <description><![CDATA[What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
+Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it.]]></description>
+</item>
+<item>
+    <title>Trust Region Policy Optimization</title>
+    <link>https://shawnmenz.github.io/posts/trpo/</link>
+    <pubDate>Thu, 21 Dec 2023 14:21:39 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/trpo/</guid>
+    <description><![CDATA[Methods for Policy Optimization In reinforcement learning, the goal is to learn a policy, which is a strategy that specifies what action to take in each state of the environment. Most of the algorithms for policy optimization can be categorized into three major methods:
+policy iteration methods: estimate the value function under current policy and improve the policy. policy gradient methods: estimate the gradient of the expected return obtained from sample trajectories.]]></description>
+</item>
+<item>
     <title>Docker</title>
     <link>https://shawnmenz.github.io/posts/docker/</link>
     <pubDate>Sat, 09 Dec 2023 14:19:21 -0600</pubDate>
@@ -14,7 +32,7 @@
 From Bare Metal to Docker Bare Metal: The applications ran directly on the physical server (Bare Metal). Teams purchased, racked, stacked, powered on, and configured every new machine.]]></description>
 </item>
 <item>
-    <title>UX Design</title>
+    <title>A Brief Introduction of UX Design</title>
     <link>https://shawnmenz.github.io/posts/uxdesign/</link>
     <pubDate>Sun, 13 Nov 2022 22:24:38 -0500</pubDate>
     <author>Zexuan Meng</author>
@@ -47,8 +65,8 @@ usable Equitable enjoyable useful User experience career Interaction designer: I
     <author>Zexuan Meng</author>
     <guid>https://shawnmenz.github.io/posts/hugo/</guid>
     <description><![CDATA[Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
-cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml)
-theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily. For example, we add a new markdown file named first_post.]]></description>
+cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml). In this tutorial I choose the LoveIt theme
+theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily.]]></description>
 </item>
 <item>
     <title>Basic R</title>

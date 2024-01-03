@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>A Brief Introduction of LLM - Shawn&#39;s Homepage</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="A Brief Introduction of LLM" />
+<meta property="og:description" content="What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
+Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://shawnmenz.github.io/posts/llm/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-02T16:05:41-06:00" />
+<meta property="article:modified_time" content="2024-01-03T12:32:41-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="A Brief Introduction of LLM"/>
+<meta name="twitter:description" content="What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
+Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it."/>
+<meta name="application-name" content="My cool site">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://shawnmenz.github.io/posts/llm/" /><link rel="prev" href="https://shawnmenz.github.io/posts/trpo/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "A Brief Introduction of LLM",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/shawnmenz.github.io\/posts\/llm\/"
+        },"genre": "posts","wordcount":  523 ,
+        "url": "https:\/\/shawnmenz.github.io\/posts\/llm\/","datePublished": "2024-01-02T16:05:41-06:00","dateModified": "2024-01-03T12:32:41-06:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Zexuan Meng"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Shawn&#39;s Homepage">Home</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="Learning from work"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/llm/" selected>English</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Shawn&#39;s Homepage">Home</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="Learning from work">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/llm/" selected>English</option></select>
+                </a></div>
+    </div>
+</header><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Brief Introduction of LLM</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/llm/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>LLM</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="01-02-2024">01-02-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;523 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-an-llm">What is an LLM?</a></li>
+    <li><a href="#zero-shot-learning">Zero-shot Learning</a></li>
+    <li><a href="#prompt-engineering">Prompt Engineering</a></li>
+    <li><a href="#reference">Reference</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="what-is-an-llm">What is an LLM?</h2>
+<p>LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.</p>
+<h2 id="zero-shot-learning">Zero-shot Learning</h2>
+<p>This terminology means that the model can perform a task even if it has not been explicitly trained to do it. Previously, if you want to achieve good result in a model, you need to explicitly train it on specific tasks. However, LLMs can do all kinds of language process related work without explicitly training.</p>
+<h2 id="prompt-engineering">Prompt Engineering</h2>
+<p>Building an LLM from scratch is extremely expensive. With the help of prompt engineering, we can make use of LLM out-of-box (i.e. not training any internal model parameters) while realizing a relatively high value of most of LLM use cases. From my perspective, LLMs can understand the natural language is because of the tokenization step. In this case, they cannot really &lsquo;understand&rsquo; the questions in the form of natural language. Thus, in some sense, we are “tricking” these language models to solve problems.</p>
+<p>To improve the quality of LLM responses, we can employ specific prompt engineering heuristics (tricks).</p>
+<ul>
+<li><strong>Be Descriptive (More details will be better)</strong>: try to include more details in your questions or requests.</li>
+<li><strong>Give Examples</strong>: Adopt the concept of few-shot learning, provide several examples in your prompt will help a lot.</li>
+<li><strong>Use Structured Text</strong>: Organize the structure of the prompt. For example, use ALL CAPS for emphasis, adopt markdown format or use JSON to organize information, etc.</li>
+<li><strong>Chain of Thought</strong>: Guide the LLM to think step by step. Try to break down complex problems into manageable sub-problems . You can simply include &ldquo;Let&rsquo;s think step by step&rdquo; in the prompt. However, in the latest version of some LLMs (like ChatGPT), this strategy doesn&rsquo;t seems helpful because they may already think step-by-step.</li>
+<li><strong>Chatbot Personas</strong>: Prompt the LLM to take on a particular persona. You may not know the best way to describe your problem to the LLM sometimes, but it helpful if you know who would help you as an expert to solve the problem.</li>
+<li><strong>Flipped Approach</strong>: This is the most exciting approach to treat LLMs as assistants. Since we may not know what the LLM knows or how it thinks, why not flip the characters? Let the LLMs to ask us questions and help us come up with some certain ideas.
+<pre tabindex="0"><code>Before:
+What is Reinforcement Learning?
+
+After:
+I want you to ask me questions to help me come up with the
+concept of Reinforcement Learning.
+Ask me one question at a time to keep things conversational.
+</code></pre></li>
+<li><strong>Refilect, Review, and Refine</strong>: Ask the LLM to review its previous responses or even your prompts and rewrite to refine and improve them.
+<pre tabindex="0"><code>Example:
+Review your previous response, pinpoint areas for enhancement
+and offer an improved version.
+Then explain your reasoning for how you improved the response.
+</code></pre></li>
+</ul>
+<h2 id="reference">Reference</h2>
+<p><a href="https://towardsdatascience.com/a-practical-introduction-to-llms-65194dda1148" target="_blank" rel="noopener noreffer ">A Practical Introduction to LLMs</a></p>
+<p><a href="https://towardsdatascience.com/prompt-engineering-how-to-trick-ai-into-solving-your-problems-7ce1ed3b553f" target="_blank" rel="noopener noreffer ">Prompt Engineering: How to Trick AI into Solving Your Problems</a></p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 01-03-2024</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/trpo/" class="prev" rel="prev" title="Trust Region Policy Optimization"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Trust Region Policy Optimization</a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

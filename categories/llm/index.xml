@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>LLM - Category - Shawn&#39;s Homepage</title>
+        <link>https://shawnmenz.github.io/categories/llm/</link>
+        <description>LLM - Category - Shawn&#39;s Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Tue, 02 Jan 2024 16:05:41 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/llm/" rel="self" type="application/rss+xml" /><item>
+    <title>A Brief Introduction of LLM</title>
+    <link>https://shawnmenz.github.io/posts/llm/</link>
+    <pubDate>Tue, 02 Jan 2024 16:05:41 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/llm/</guid>
+    <description><![CDATA[What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
+Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it.]]></description>
+</item>
+</channel>
+</rss>

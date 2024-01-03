@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Reinforcement Learning - Category - Shawn&#39;s Homepage</title>
+        <link>https://shawnmenz.github.io/categories/reinforcement-learning/</link>
+        <description>Reinforcement Learning - Category - Shawn&#39;s Homepage</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Thu, 21 Dec 2023 14:21:39 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/reinforcement-learning/" rel="self" type="application/rss+xml" /><item>
+    <title>Trust Region Policy Optimization</title>
+    <link>https://shawnmenz.github.io/posts/trpo/</link>
+    <pubDate>Thu, 21 Dec 2023 14:21:39 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/trpo/</guid>
+    <description><![CDATA[Methods for Policy Optimization In reinforcement learning, the goal is to learn a policy, which is a strategy that specifies what action to take in each state of the environment. Most of the algorithms for policy optimization can be categorized into three major methods:
+policy iteration methods: estimate the value function under current policy and improve the policy. policy gradient methods: estimate the gradient of the expected return obtained from sample trajectories.]]></description>
+</item>
+</channel>
+</rss>

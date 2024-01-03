@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shawnmenz.github.io/posts/sql/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-10T17:46:08-04:00" />
-<meta property="article:modified_time" content="2022-10-10T17:46:08-04:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+<meta property="article:modified_time" content="2023-12-21T18:09:39-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="SQL"/>
@@ -27,7 +27,7 @@
             "@type": "WebPage",
             "@id": "https:\/\/shawnmenz.github.io\/posts\/sql\/"
         },"genre": "posts","wordcount":  1446 ,
-        "url": "https:\/\/shawnmenz.github.io\/posts\/sql\/","datePublished": "2022-10-10T17:46:08-04:00","dateModified": "2022-10-10T17:46:08-04:00","publisher": {
+        "url": "https:\/\/shawnmenz.github.io\/posts\/sql\/","datePublished": "2022-10-10T17:46:08-04:00","dateModified": "2023-12-21T18:09:39-06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -83,63 +83,48 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#sql-as-a-query-language">SQL as a query language</a></li>
-    <li><a href="#terminology">Terminology</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#query-process">Query process</a></li>
-    <li><a href="#select">SELECT</a>
+    <li><a href="#role-of-sql">Role of SQL</a>
       <ul>
-        <li><a href="#as---defining-column-aliases">AS - Defining Column Aliases</a></li>
-        <li><a href="#limit---limit-the-rows-in-result-set">LIMIT - Limit the Rows in Result Set</a></li>
-        <li><a href="#order-by---specify-order-of-rows">ORDER BY - Specify Order of Rows</a></li>
-        <li><a href="#literals-expressions-and-calculations">Literals, Expressions and Calculations</a></li>
-        <li><a href="#built-in-functions">Built-in Functions</a></li>
-        <li><a href="#distinct---removing-duplicates">DISTINCT - Removing Duplicates</a></li>
+        <li><a href="#sql-as-a-query-language">SQL as a query language</a></li>
+        <li><a href="#terminology">Terminology</a></li>
       </ul>
     </li>
-    <li><a href="#conditioanl-expression">Conditioanl Expression</a>
+    <li><a href="#retrieving-data-from-a-single-table">Retrieving Data from a Single Table</a>
       <ul>
-        <li><a href="#where-clause">WHERE Clause</a></li>
-        <li><a href="#like---text-matching">LIKE - Text Matching</a></li>
-        <li><a href="#between---range">BETWEEN - Range</a></li>
-        <li><a href="#in---match-set">IN - Match Set</a></li>
-        <li><a href="#union---combining-query-results">UNION - Combining Query Results</a></li>
-        <li><a href="#example">Example</a></li>
+        <li><a href="#query-process">Query process</a></li>
+        <li><a href="#select">SELECT</a></li>
+        <li><a href="#conditioanl-expression">Conditioanl Expression</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</a>
+    <li><a href="#retrieving-data-from-multiple-tables">Retrieving Data from Multiple Tables</a>
       <ul>
-        <li><a href="#inner-join">INNER JOIN</a></li>
-        <li><a href="#left-and-right-outer-joins">Left and Right Outer Joins</a></li>
-        <li><a href="#full-outer-joins">Full Outer Joins</a></li>
+        <li><a href="#join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#common-aggregation-functions">Common Aggregation Functions</a></li>
-    <li><a href="#group-by">GROUP BY</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#create-view">CREATE VIEW</a></li>
-    <li><a href="#common-uses-cases-for-views">Common Uses Cases for Views</a></li>
+    <li><a href="#aggregation">Aggregation</a>
+      <ul>
+        <li><a href="#common-aggregation-functions">Common Aggregation Functions</a></li>
+        <li><a href="#group-by">GROUP BY</a></li>
+      </ul>
+    </li>
+    <li><a href="#grouping">Grouping</a></li>
+    <li><a href="#views">Views</a>
+      <ul>
+        <li><a href="#create-view">CREATE VIEW</a></li>
+        <li><a href="#common-uses-cases-for-views">Common Uses Cases for Views</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="role-of-sql">Role of SQL</h1>
-<h2 id="sql-as-a-query-language">SQL as a query language</h2>
+            </div><div class="content" id="content"><h2 id="role-of-sql">Role of SQL</h2>
+<h3 id="sql-as-a-query-language">SQL as a query language</h3>
 <ul>
 <li>SQL is the standard query language for retrieving data from relational databases</li>
 <li>SQL is a standard and is supported by virtually all relational databases in the same manner.</li>
 <li>Queries built for one database generally run without modification against another database.</li>
 <li>Many vendors provide extensions to SQL for analytics and special data types.</li>
 </ul>
-<h2 id="terminology">Terminology</h2>
+<h3 id="terminology">Terminology</h3>
 <table>
 <thead>
 <tr>
@@ -251,8 +236,8 @@
 </tr>
 </tbody>
 </table>
-<h1 id="retrieving-data-from-a-single-table">Retrieving Data from a Single Table</h1>
-<h2 id="query-process">Query process</h2>
+<h2 id="retrieving-data-from-a-single-table">Retrieving Data from a Single Table</h2>
+<h3 id="query-process">Query process</h3>
 <ul>
 <li>Client connects to a specific database on the database server by supplying connection parameters (IP address, username, password)</li>
 <li>Client stores connection information in a connection object</li>
@@ -264,20 +249,20 @@
 <li>Client stores the result set in local memory and processes the data</li>
 <li>Client disconnects from the database by closing the connection to the server and releasing all resources</li>
 </ul>
-<h2 id="select">SELECT</h2>
+<h3 id="select">SELECT</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="p">[</span><span class="n">columns</span><span class="p">]</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="p">[</span><span class="n">tables</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="p">[</span><span class="k">column</span><span class="w"> </span><span class="n">conditions</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">[</span><span class="k">column</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">HAVING</span><span class="w"> </span><span class="p">[</span><span class="k">group</span><span class="w"> </span><span class="n">criteria</span><span class="p">]</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="p">[</span><span class="n">columns</span><span class="p">];</span><span class="w">
-</span></span></span></code></pre></div><h3 id="as---defining-column-aliases">AS - Defining Column Aliases</h3>
+</span></span></span></code></pre></div><h4 id="as---defining-column-aliases">AS - Defining Column Aliases</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FullName</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EMail</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="limit---limit-the-rows-in-result-set">LIMIT - Limit the Rows in Result Set</h3>
+</span></span></span></code></pre></div><h4 id="limit---limit-the-rows-in-result-set">LIMIT - Limit the Rows in Result Set</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">FullName</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">EMail</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="w"> </span><span class="k">LIMIT</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="order-by---specify-order-of-rows">ORDER BY - Specify Order of Rows</h3>
+</span></span></span></code></pre></div><h4 id="order-by---specify-order-of-rows">ORDER BY - Specify Order of Rows</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">name</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="literals-expressions-and-calculations">Literals, Expressions and Calculations</h3>
+</span></span></span></code></pre></div><h4 id="literals-expressions-and-calculations">Literals, Expressions and Calculations</h4>
 <ul>
 <li>Literals are fixed values.</li>
 </ul>
@@ -286,7 +271,7 @@
 <li>Queries can contain literals (a fixed value), expressions (including calculations), and various functions.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="o">`</span><span class="n">Film</span><span class="w"> </span><span class="n">Title</span><span class="o">`</span><span class="p">,</span><span class="w"> </span><span class="k">length</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mi">60</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">HRS</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Film</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="built-in-functions">Built-in Functions</h3>
+</span></span></span></code></pre></div><h4 id="built-in-functions">Built-in Functions</h4>
 <table>
 <thead>
 <tr>
@@ -338,10 +323,10 @@
 </tr>
 </tbody>
 </table>
-<h3 id="distinct---removing-duplicates">DISTINCT - Removing Duplicates</h3>
+<h4 id="distinct---removing-duplicates">DISTINCT - Removing Duplicates</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h2 id="conditioanl-expression">Conditioanl Expression</h2>
-<h3 id="where-clause">WHERE Clause</h3>
+</span></span></span></code></pre></div><h3 id="conditioanl-expression">Conditioanl Expression</h3>
+<h4 id="where-clause">WHERE Clause</h4>
 <ul>
 <li>The <code>WHERE</code> clause allows filtering of unwanted rows and only return select rows.</li>
 <li>When data is missing, it has the value <code>NULL</code> – which is no value at all.</li>
@@ -350,7 +335,7 @@
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Rio Grande do Sul&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="like---text-matching">LIKE - Text Matching</h3>
+</span></span></span></code></pre></div><h4 id="like---text-matching">LIKE - Text Matching</h4>
 <ul>
 <li>The <code>LIKE</code> operator is used for partial string matching.</li>
 <li><code>%</code> Matches zero or more characters</li>
@@ -358,10 +343,10 @@
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">phone</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;_55%1212&#39;</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="between---range">BETWEEN - Range</h3>
+</span></span></span></code></pre></div><h4 id="between---range">BETWEEN - Range</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Payment</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="in---match-set">IN - Match Set</h3>
+</span></span></span></code></pre></div><h4 id="in---match-set">IN - Match Set</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">postal_code</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">45403</span><span class="p">,</span><span class="mi">29444</span><span class="p">,</span><span class="mi">26284</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></div><ul>
@@ -377,7 +362,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ANY</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">
 </span></span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">credits</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALL</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w">
-</span></span></span></code></pre></div><h3 id="union---combining-query-results">UNION - Combining Query Results</h3>
+</span></span></span></code></pre></div><h4 id="union---combining-query-results">UNION - Combining Query Results</h4>
 <ul>
 <li>Unions are combinations of two or more results sets into a single result set.</li>
 <li>The results sets must have the same number of columns with the same data types.</li>
@@ -387,7 +372,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">UNION</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Courses</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">dept</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;IE&#39;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="example">Example</h3>
+</span></span></span></code></pre></div><h4 id="example">Example</h4>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="k">DISTINCT</span><span class="w"> </span><span class="n">district</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Address</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">postal_code</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="mi">45403</span><span class="p">,</span><span class="mi">29444</span><span class="p">,</span><span class="mi">26284</span><span class="p">)</span><span class="w">
@@ -397,9 +382,9 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">OR</span><span class="w"> </span><span class="p">(</span><span class="n">city_id</span><span class="w"> </span><span class="k">BETWEEN</span><span class="w"> </span><span class="mi">500</span><span class="w"> </span><span class="k">AND</span><span class="w"> </span><span class="mi">800</span><span class="p">))</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">address</span><span class="w"> </span><span class="k">LIKE</span><span class="w"> </span><span class="s1">&#39;%000&#39;</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">AND</span><span class="w"> </span><span class="n">city_id</span><span class="w"> </span><span class="k">IS</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h1 id="retrieving-data-from-multiple-tables">Retrieving Data from Multiple Tables</h1>
-<h2 id="join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</h2>
-<h3 id="inner-join">INNER JOIN</h3>
+</span></span></span></code></pre></div><h2 id="retrieving-data-from-multiple-tables">Retrieving Data from Multiple Tables</h2>
+<h3 id="join---match-primary-and-foreign-keys">Join - Match Primary and Foreign Keys</h3>
+<h4 id="inner-join">INNER JOIN</h4>
 <ul>
 <li>An <code>INNER JOIN</code> is an equi-join that selects rows that have matching values in both tables.</li>
 <li>The keyword <code>INNER</code> is optional.</li>
@@ -417,20 +402,20 @@
 <li>A <code>NATURAL JOIN</code> automatically joins on columns that are named the same.</li>
 </ul>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> </span><span class="k">NATURAL</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h3 id="left-and-right-outer-joins">Left and Right Outer Joins</h3>
+</span></span></span></code></pre></div><h4 id="left-and-right-outer-joins">Left and Right Outer Joins</h4>
 <ul>
 <li>The <em>Left Join</em> or <em>Left Outer Join</em> operation is a special type of join that takes two relations, <strong>A</strong> and <strong>B</strong>, and returns the inner join of <strong>A</strong> and <strong>B</strong> along with the unmatched rows of <strong>A</strong>.</li>
 <li><strong>A</strong> is the first relation defined in the <strong>FROM</strong> clause and is therefore the left relation.</li>
 <li>The left outer join includes the unmatched rows of the left relation along with the matched columns in the result.</li>
 <li><strong>A</strong> <em>Right Join</em> is analogous except that it takes the unmatched rows of the right relational <strong>B</strong>.</li>
 </ul>
-<h3 id="full-outer-joins">Full Outer Joins</h3>
+<h4 id="full-outer-joins">Full Outer Joins</h4>
 <ul>
 <li><strong>A</strong> full outer join takes two relations, <strong>A</strong> and <strong>B</strong>, and returns the inner join of <strong>A</strong> and <strong>B</strong> along with the unmatched rows of <strong>A</strong> and <strong>B</strong>.</li>
 <li>Essentially, a full outer join is the distinct union of a left and right outer join.</li>
 </ul>
-<h1 id="aggregation">Aggregation</h1>
-<h2 id="common-aggregation-functions">Common Aggregation Functions</h2>
+<h2 id="aggregation">Aggregation</h2>
+<h3 id="common-aggregation-functions">Common Aggregation Functions</h3>
 <table>
 <thead>
 <tr>
@@ -477,7 +462,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="group-by">GROUP BY</h2>
+<h3 id="group-by">GROUP BY</h3>
 <ul>
 <li>When aggregation functions are used in a query that includes a <code>GROUP BY</code> clause then the functions are applied to each group rather than a column.</li>
 </ul>
@@ -487,7 +472,7 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">       </span><span class="k">SUM</span><span class="p">(</span><span class="n">time</span><span class="p">)</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">Total</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">Asset</span><span class="w"> </span><span class="n">a</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="k">type</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h1 id="grouping">Grouping</h1>
+</span></span></span></code></pre></div><h2 id="grouping">Grouping</h2>
 <ul>
 <li>Generating Single-Column Groups</li>
 </ul>
@@ -502,15 +487,15 @@
 </span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="k">FROM</span><span class="w"> </span><span class="n">film_actor</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">GROUP</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">actor_id</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">HAVING</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h1 id="views">Views</h1>
-<h2 id="create-view">CREATE VIEW</h2>
+</span></span></span></code></pre></div><h2 id="views">Views</h2>
+<h3 id="create-view">CREATE VIEW</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">CREATE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">AuthorNM</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="p">(</span><span class="n">fullname</span><span class="p">,</span><span class="w"> </span><span class="n">email</span><span class="p">)</span><span class="w">
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">AS</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w"> </span><span class="k">SELECT</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">substr</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;****&#39;</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="n">substr</span><span class="p">(</span><span class="n">email</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">)</span><span class="w"> 
 </span></span></span><span class="line"><span class="cl"><span class="w">   </span><span class="k">FROM</span><span class="w"> </span><span class="n">Author</span><span class="p">;</span><span class="w">
-</span></span></span></code></pre></div><h2 id="common-uses-cases-for-views">Common Uses Cases for Views</h2>
+</span></span></span></code></pre></div><h3 id="common-uses-cases-for-views">Common Uses Cases for Views</h3>
 <ul>
 <li>Define a view that contains select rows and columns and provides authorization for some users to access the view but not the underlying tables that define the view.</li>
 <li>Aggregate data from a complex query in a view to simplify common data access.</li>
@@ -520,7 +505,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 10-10-2022</span>
+                <span>Updated on 12-21-2023</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -538,12 +523,12 @@
     </div>
 
     <div class="post-nav"><a href="/posts/database/" class="prev" rel="prev" title="Database"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Database</a>
-            <a href="/posts/uxdesign/" class="next" rel="next" title="UX Design">UX Design<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+            <a href="/posts/uxdesign/" class="next" rel="next" title="A Brief Introduction of UX Design">A Brief Introduction of UX Design<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
 </div>
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
         </div>
     </footer></div>
 
@@ -552,5 +537,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

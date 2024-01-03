@@ -9,7 +9,7 @@
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shawnmenz.github.io/posts/database/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-10-04T23:17:07-04:00" />
-<meta property="article:modified_time" content="2022-10-04T23:17:07-04:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+<meta property="article:modified_time" content="2023-12-21T18:09:39-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Database"/>
@@ -26,8 +26,8 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/shawnmenz.github.io\/posts\/database\/"
-        },"genre": "posts","wordcount":  2528 ,
-        "url": "https:\/\/shawnmenz.github.io\/posts\/database\/","datePublished": "2022-10-04T23:17:07-04:00","dateModified": "2022-10-04T23:17:07-04:00","publisher": {
+        },"genre": "posts","wordcount":  2525 ,
+        "url": "https:\/\/shawnmenz.github.io\/posts\/database\/","datePublished": "2022-10-04T23:17:07-04:00","dateModified": "2023-12-21T18:09:39-06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -74,7 +74,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Database</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/database/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Database</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="10-04-2022">10-04-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2528 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="10-04-2022">10-04-2022</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;2525 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;12 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -83,109 +83,81 @@
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#file-based-approach">File based Approach</a>
+    <li><a href="#two-approach-to-store-data">Two approach to store data</a>
       <ul>
-        <li><a href="#problems-with-the-file-based-approach">Problems with the file-based approach</a></li>
-        <li><a href="#disadvantages-to-the-file-based-approach">Disadvantages to the file-based approach</a></li>
+        <li><a href="#file-based-approach">File based Approach</a></li>
+        <li><a href="#database-approach">Database Approach</a></li>
       </ul>
     </li>
-    <li><a href="#database-approach">Database Approach</a>
+    <li><a href="#database">Database</a>
       <ul>
-        <li><a href="#problems-with-the-database-approach">Problems with the database approach</a></li>
-        <li><a href="#database-view">Database View</a></li>
-        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#benefits-1">Benefits</a></li>
+        <li><a href="#drawbacks">Drawbacks</a></li>
+        <li><a href="#roles-of-database-user">Roles of database user</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#benefits-1">Benefits</a></li>
-    <li><a href="#drawbacks">Drawbacks</a></li>
-    <li><a href="#roles-of-database-user">Roles of database user</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#client-server-architecture">Client-Server Architecture</a>
+    <li><a href="#database-architechtures">Database Architechtures</a>
       <ul>
-        <li><a href="#server-and-client-functionality">Server and Client Functionality</a></li>
+        <li><a href="#client-server-architecture">Client-Server Architecture</a></li>
+        <li><a href="#3-tier-3-schema-database-applications-ansisparc-architecture">3-Tier (3-schema) Database applications (ANSI/SPARC architecture)</a></li>
+        <li><a href="#transaction-processing-monitor-tpm">Transaction Processing Monitor (TPM)</a></li>
       </ul>
     </li>
-    <li><a href="#3-tier-3-schema-database-applications-ansisparc-architecture">3-Tier (3-schema) Database applications (ANSI/SPARC architecture)</a></li>
-    <li><a href="#3-tiers-schema">3 Tiers (schema)</a>
+    <li><a href="#conceptual-data-modeling">Conceptual Data Modeling</a>
       <ul>
-        <li><a href="#benefits-2">Benefits</a></li>
+        <li><a href="#conceptual--semantic-modelling">Conceptual / Semantic Modelling</a></li>
+        <li><a href="#visualizing-multiplicity">Visualizing Multiplicity</a></li>
+        <li><a href="#visualizing-data-models">Visualizing data models</a></li>
       </ul>
     </li>
-    <li><a href="#transaction-processing-monitor-tpm">Transaction Processing Monitor (TPM)</a>
+    <li><a href="#entity-relationship-diagram">Entity-Relationship Diagram</a></li>
+    <li><a href="#uml-unified-modeling-language">UML (Unified Modeling Language)</a>
       <ul>
-        <li><a href="#tasks-provided-by-a-tpm">Tasks provided by a TPM</a></li>
+        <li><a href="#multiplicity">Multiplicity</a></li>
+        <li><a href="#class-diagram">Class Diagram</a></li>
+        <li><a href="#system-analysis-approach">System Analysis Approach</a></li>
+        <li><a href="#phases-of-data-modeling">Phases of Data Modeling</a></li>
+        <li><a href="#modeling--systems-analysis">Modeling &amp; Systems Analysis</a></li>
+        <li><a href="#relationship-types">Relationship Types</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#conceptual--semantic-modelling">Conceptual / Semantic Modelling</a></li>
-    <li><a href="#visualizing-multiplicity">Visualizing Multiplicity</a></li>
-    <li><a href="#visualizing-data-models">Visualizing data models</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#multiplicity">Multiplicity</a></li>
-    <li><a href="#class-diagram">Class Diagram</a></li>
-    <li><a href="#system-analysis-approach">System Analysis Approach</a></li>
-    <li><a href="#phases-of-data-modeling">Phases of Data Modeling</a></li>
-    <li><a href="#modeling--systems-analysis">Modeling &amp; Systems Analysis</a></li>
-    <li><a href="#relationship-types">Relationship Types</a>
+    <li><a href="#relational-model">Relational Model</a>
       <ul>
-        <li><a href="#association-relationship-between-instances">association (relationship between instances)</a></li>
-        <li><a href="#generalization-relationship-between-classes">generalization (relationship between classes)</a></li>
-        <li><a href="#aggregation">Aggregation</a></li>
+        <li><a href="#relation-schema">Relation Schema</a></li>
+        <li><a href="#relation-instance">Relation Instance</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#relation-schema">Relation Schema</a></li>
-    <li><a href="#relation-instance">Relation Instance</a>
+    <li><a href="#keys">Keys</a>
       <ul>
-        <li><a href="#characteristics-of-relations">Characteristics of Relations</a></li>
-        <li><a href="#relational-database-schema">Relational Database Schema</a></li>
+        <li><a href="#superkey">Superkey</a></li>
+        <li><a href="#candidate-key">Candidate key</a></li>
+        <li><a href="#primary-key">Primary Key</a></li>
+        <li><a href="#foreign-key">Foreign key</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#superkey">Superkey</a></li>
-    <li><a href="#candidate-key">Candidate key</a></li>
-    <li><a href="#primary-key">Primary Key</a></li>
-    <li><a href="#foreign-key">Foreign key</a></li>
-  </ul>
-
-  <ul>
-    <li><a href="#database-integrity">Database Integrity</a>
+    <li><a href="#relation-db-creation">Relation DB Creation</a>
       <ul>
-        <li><a href="#domain-integrity">Domain Integrity</a></li>
-        <li><a href="#entity-integrity">Entity Integrity</a></li>
-        <li><a href="#referential-integrity">Referential Integrity</a></li>
-        <li><a href="#semantic-integrity">Semantic Integrity</a></li>
+        <li><a href="#database-integrity">Database Integrity</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li><a href="#approach-to-database-design-top-down-approach">Approach to Database Design: Top-Down Approach</a></li>
-    <li><a href="#normal-forms">Normal Forms</a></li>
-    <li><a href="#rules-for-decomposition">Rules for Decomposition</a></li>
+    <li><a href="#relational-table-rules">Relational Table Rules</a></li>
+    <li><a href="#normalization--normal-forms">Normalization &amp; Normal Forms</a>
+      <ul>
+        <li><a href="#approach-to-database-design-top-down-approach">Approach to Database Design: Top-Down Approach</a></li>
+        <li><a href="#normal-forms">Normal Forms</a></li>
+        <li><a href="#rules-for-decomposition">Rules for Decomposition</a></li>
+      </ul>
+    </li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h1 id="two-approach-to-store-data">Two approach to store data</h1>
-<h2 id="file-based-approach">File based Approach</h2>
-<h3 id="problems-with-the-file-based-approach">Problems with the file-based approach</h3>
+            </div><div class="content" id="content"><h2 id="two-approach-to-store-data">Two approach to store data</h2>
+<h3 id="file-based-approach">File based Approach</h3>
+<h4 id="problems-with-the-file-based-approach">Problems with the file-based approach</h4>
 <ul>
 <li>Definition of data was embeded into the application programs, rather than being stored separately and independently</li>
 <li>No control over access and manipulation of data beyond that imposed by application programs</li>
 </ul>
-<h3 id="disadvantages-to-the-file-based-approach">Disadvantages to the file-based approach</h3>
+<h4 id="disadvantages-to-the-file-based-approach">Disadvantages to the file-based approach</h4>
 <ul>
 <li>Separation and isolation of data</li>
 <li>Duplication of data</li>
@@ -193,25 +165,25 @@
 <li>Incompatible file formats</li>
 <li>Programs are written to satisfy one specific data request</li>
 </ul>
-<h2 id="database-approach">Database Approach</h2>
-<h3 id="problems-with-the-database-approach">Problems with the database approach</h3>
+<h3 id="database-approach">Database Approach</h3>
+<h4 id="problems-with-the-database-approach">Problems with the database approach</h4>
 <ul>
 <li>All data is pooled together, some data might not be shared with others</li>
 </ul>
-<h3 id="database-view">Database View</h3>
+<h4 id="database-view">Database View</h4>
 <ul>
 <li>Allows each user to have his or her own definition of the database</li>
 <li>A view provides access to a subset of the database</li>
 <li>View mechanism is imperative if we want to secure the data</li>
 </ul>
-<h3 id="benefits">Benefits</h3>
+<h4 id="benefits">Benefits</h4>
 <ul>
 <li>Reduce complexity</li>
 <li>Provides a level of security</li>
 <li>Provides a mechanism to customize the appearance of the database</li>
 <li>Present a consistent, unchanging picture of the structure of the database, even when the underlying structure og the database has changed</li>
 </ul>
-<h1 id="database">Database</h1>
+<h2 id="database">Database</h2>
 <ul>
 <li>A <strong>database</strong> can be defined as a collection of <strong>logically related data</strong> from which users can efficiently retrieve the desired information.</li>
 <li><strong>System catalog</strong> (metadata) provides description of data to enable program&rsquo;s data independence.</li>
@@ -219,7 +191,7 @@
 <li>The main advantage of DBMS is <strong>centralized data management</strong>.</li>
 <li><strong>Redundancy</strong>: Represents a relationship between two objects in a <strong>relational database</strong>.</li>
 </ul>
-<h2 id="benefits-1">Benefits</h2>
+<h3 id="benefits-1">Benefits</h3>
 <ul>
 <li>Control of data redundancy</li>
 <li>data consistency</li>
@@ -236,7 +208,7 @@
 <li>Increased concurrency</li>
 <li>Improved backup and recovery services</li>
 </ul>
-<h2 id="drawbacks">Drawbacks</h2>
+<h3 id="drawbacks">Drawbacks</h3>
 <ul>
 <li>Complexity</li>
 <li>Size</li>
@@ -246,7 +218,7 @@
 <li>Performance can degrade since time increases size of data</li>
 <li>Higher impact of a failure</li>
 </ul>
-<h2 id="roles-of-database-user">Roles of database user</h2>
+<h3 id="roles-of-database-user">Roles of database user</h3>
 <ul>
 <li>Data Administrator (DA)</li>
 <li>Database Administrator (DBA)</li>
@@ -254,7 +226,7 @@
 <li>Application Programmers</li>
 <li>End Users (naive and sophisticated)</li>
 </ul>
-<h1 id="database-architechtures">Database Architechtures</h1>
+<h2 id="database-architechtures">Database Architechtures</h2>
 <ul>
 <li>Old Architechtures
 <ul>
@@ -263,14 +235,14 @@
 </ul>
 </li>
 </ul>
-<h2 id="client-server-architecture">Client-Server Architecture</h2>
+<h3 id="client-server-architecture">Client-Server Architecture</h3>
 <ul>
 <li><strong>default architecture used to build modern day databases</strong></li>
 <li>In the client server architecture, the database application is spread across at lease two different processes, residing on potentially two different platforms.</li>
 <li>Identify the functionality that the client would need to provide for a database application</li>
 <li>Identify the functionality that the database server would need to provide for a database application</li>
 </ul>
-<h3 id="server-and-client-functionality">Server and Client Functionality</h3>
+<h4 id="server-and-client-functionality">Server and Client Functionality</h4>
 <table>
 <thead>
 <tr>
@@ -301,8 +273,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="3-tier-3-schema-database-applications-ansisparc-architecture">3-Tier (3-schema) Database applications (ANSI/SPARC architecture)</h2>
-<h2 id="3-tiers-schema">3 Tiers (schema)</h2>
+<h3 id="3-tier-3-schema-database-applications-ansisparc-architecture">3-Tier (3-schema) Database applications (ANSI/SPARC architecture)</h3>
 <ul>
 <li><strong>Internal level (has Internal schema)</strong>: It is the lowest level of data abstraction that deals with the physical representation of the database on the computer and thus, is also known as <strong>physical level</strong>. It describes <em>how</em> the data is physically stored and organized on the storage medium. At this level, various aspects are considered to achieve optimal runtime performance and storage space utilization. These aspects include storage space allocation techniques for data and indexes, access paths such as indexes, data compression and encryption techniques, and record placement.</li>
 <li><strong>Conceptual level (has Conceptual schema)</strong>: This level of abstraction deals with the logical structure of the entire database and thus, is also known as <strong>logical level</strong>. It describes <em>what</em> data is stored in the database, the relationships among the data and complete view of the user’s requirements without any concern for the physical implementation. That is, it hides the complexity of physical storage structures. The conceptual view is the overall view of the database and it includes all the information that is going to be represented in the database.</li>
@@ -315,7 +286,7 @@
 <li><strong>Logical data independence</strong></li>
 <li><strong>Physical data independence</strong></li>
 </ul>
-<h3 id="benefits-2">Benefits</h3>
+<h4 id="benefits-2">Benefits</h4>
 <ul>
 <li>&lsquo;Thin&rsquo; Client, requires less expensive hardware.</li>
 <li>Application maintaince centralized.</li>
@@ -323,11 +294,11 @@
 <li>Separates business logic from database functions, making it easier to implement load balancing.</li>
 <li>Maps quite naturally to Web environment.</li>
 </ul>
-<h2 id="transaction-processing-monitor-tpm">Transaction Processing Monitor (TPM)</h2>
+<h3 id="transaction-processing-monitor-tpm">Transaction Processing Monitor (TPM)</h3>
 <ul>
 <li>middleware runs on application server</li>
 </ul>
-<h3 id="tasks-provided-by-a-tpm">Tasks provided by a TPM</h3>
+<h4 id="tasks-provided-by-a-tpm">Tasks provided by a TPM</h4>
 <ul>
 <li>Transaction routing to different database servers</li>
 <li>transaction monitoring for distributed transactions</li>
@@ -335,20 +306,20 @@
 <li>Funneling - that allows the TPM to connect users to the DB when they need data and disconnect them when another user requests the connection.</li>
 <li>The TP monitor can increase reliability provided by the system by recognizing node failure and redirecting the query to another similar node that can answer the question.</li>
 </ul>
-<h1 id="conceptual-data-modeling">Conceptual Data Modeling</h1>
-<h2 id="conceptual--semantic-modelling">Conceptual / Semantic Modelling</h2>
+<h2 id="conceptual-data-modeling">Conceptual Data Modeling</h2>
+<h3 id="conceptual--semantic-modelling">Conceptual / Semantic Modelling</h3>
 <ul>
 <li>A conceptual data model is a definition of the information objects of a domain</li>
 <li>Information (data) modeling is the process of describing information structures and capturing rules and constraints</li>
 <li>Data models are described using a visual notation supported by text narratives and other artifacts</li>
 </ul>
-<h2 id="visualizing-multiplicity">Visualizing Multiplicity</h2>
+<h3 id="visualizing-multiplicity">Visualizing Multiplicity</h3>
 <figure><img src="/attachments/Visualizing_Multiplicity.png"/><figcaption>
             <h4>Visualizing Multiplicity</h4>
         </figcaption>
 </figure>
 
-<h2 id="visualizing-data-models">Visualizing data models</h2>
+<h3 id="visualizing-data-models">Visualizing data models</h3>
 <ul>
 <li>Domain Model
 <ul>
@@ -391,7 +362,7 @@
 <li>The relationship between 2 entities has an associated <strong>multiplicity</strong></li>
 <li>Cardinality: is often the number of occurrences of an entity (sometimes consider the same as multiplicity)</li>
 </ul>
-<h1 id="entity-relationship-diagram">Entity-Relationship Diagram</h1>
+<h2 id="entity-relationship-diagram">Entity-Relationship Diagram</h2>
 <ul>
 <li>Entity-Relationship (ER) diagrams are also commonly used for data modeling</li>
 <li>Why choose UML over ER
@@ -408,31 +379,31 @@
 </ul>
 </li>
 </ul>
-<h1 id="uml-unified-modeling-language">UML (Unified Modeling Language)</h1>
-<h2 id="multiplicity">Multiplicity</h2>
+<h2 id="uml-unified-modeling-language">UML (Unified Modeling Language)</h2>
+<h3 id="multiplicity">Multiplicity</h3>
 <ul>
 <li>n..m (n&lt;=m; n,m&gt;=0)</li>
 <li>Unbounded (*). <strong>Cannot come alone</strong>.</li>
 </ul>
-<h2 id="class-diagram">Class Diagram</h2>
+<h3 id="class-diagram">Class Diagram</h3>
 <ul>
 <li>Use to express a conceptual data model that is implementation and database agnostic</li>
 <li>a collection or set of another entity: <strong>unfilled diamond</strong></li>
 </ul>
-<h2 id="system-analysis-approach">System Analysis Approach</h2>
+<h3 id="system-analysis-approach">System Analysis Approach</h3>
 <p>Enterprise Analysis -&gt; Requirements Analysis -&gt; Conceptual Data Modeling -&gt; Logical Data Modeling -&gt; Physical Database Design</p>
 <p>Requirements Analysis contains:</p>
 <ul>
 <li>Use case Analysis</li>
 <li>Prototyping and RAD</li>
 </ul>
-<h2 id="phases-of-data-modeling">Phases of Data Modeling</h2>
+<h3 id="phases-of-data-modeling">Phases of Data Modeling</h3>
 <ul>
 <li>Conceptual Data Modeling</li>
 <li>Logical Data Modeling</li>
 <li>Physical Database Design</li>
 </ul>
-<h2 id="modeling--systems-analysis">Modeling &amp; Systems Analysis</h2>
+<h3 id="modeling--systems-analysis">Modeling &amp; Systems Analysis</h3>
 <p>Two model types are generally constructed</p>
 <ul>
 <li>Static Model (structure diagrams)
@@ -448,26 +419,26 @@
 </ul>
 </li>
 </ul>
-<h2 id="relationship-types">Relationship Types</h2>
-<h3 id="association-relationship-between-instances">association (relationship between instances)</h3>
+<h3 id="relationship-types">Relationship Types</h3>
+<h4 id="association-relationship-between-instances">association (relationship between instances)</h4>
 <p><strong>Straight line</strong></p>
 <ul>
 <li>An association is a simple semetic relationship between two entities that indicates a link between them.</li>
 <li>The relationship between two entities has an associated <em>multiplicity</em></li>
 <li>a lower bound of 0 indicates an optionality</li>
 </ul>
-<h3 id="generalization-relationship-between-classes">generalization (relationship between classes)</h3>
+<h4 id="generalization-relationship-between-classes">generalization (relationship between classes)</h4>
 <p><strong>non-filled arrow</strong></p>
 <ul>
 <li>An us-a relationship that identifies similarities and differences</li>
 <li>Subclass Justification</li>
 </ul>
-<h3 id="aggregation">Aggregation</h3>
+<h4 id="aggregation">Aggregation</h4>
 <ul>
 <li>An aggregation is a special kind of association where one class is part of another class (<strong>non-filled diamond</strong>)</li>
 <li><strong>Composition</strong> is a special form of aggregation where the part objects are permanently part of the container (<strong>filled-diamond</strong>)</li>
 </ul>
-<h1 id="relational-model">Relational Model</h1>
+<h2 id="relational-model">Relational Model</h2>
 <ul>
 <li>
 <p>Generallu databases are based on one of the three models</p>
@@ -496,7 +467,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="relation-schema">Relation Schema</h2>
+<h3 id="relation-schema">Relation Schema</h3>
 <ul>
 <li>A relation schema consists of a <strong>relation name</strong> and a set of <strong>attributes</strong> (or fields)</li>
 </ul>
@@ -519,7 +490,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="relation-instance">Relation Instance</h2>
+<h3 id="relation-instance">Relation Instance</h3>
 <ul>
 <li>
 <p>A <strong>relation instance</strong> (or relation) <em>r</em> of the relation schema <em>R(A1, A2, &hellip;, An)</em> is a set of <em>n</em>-tuples <em>t</em>, It is also denoted by <em>r(R)</em></p>
@@ -533,7 +504,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="characteristics-of-relations">Characteristics of Relations</h3>
+<h4 id="characteristics-of-relations">Characteristics of Relations</h4>
 <ul>
 <li>
 <p>Ordering of Tuples in a Relation: tuples in a relation do not have any specified order. However, tuples in a relation can be logically ordered by the values of various attributes.</p>
@@ -550,7 +521,7 @@
 <p><strong>No two tuples can be identical in a relation</strong></p>
 </li>
 </ul>
-<h3 id="relational-database-schema">Relational Database Schema</h3>
+<h4 id="relational-database-schema">Relational Database Schema</h4>
 <ul>
 <li>A set of relation schemas together with a set of integrity constraints in the database constitutes <strong>relational database schema</strong></li>
 </ul>
@@ -559,27 +530,27 @@
         </figcaption>
 </figure>
 
-<h1 id="keys">Keys</h1>
-<h2 id="superkey">Superkey</h2>
+<h2 id="keys">Keys</h2>
+<h3 id="superkey">Superkey</h3>
 <p>The combination of attributes in superkey uniquely identify each tuple in the relation state <em>r</em></p>
 <p>For example, consider a relation schema <em>BOOK</em> with three attributes <em>ISBN</em>, <em>Book_title</em>, and <em>Category</em>. As we know, the value of <em>ISBN</em> is unique for each tuple; hence, {<em>ISBN</em>} is a superkey. In addition, the combination of all the attributes, that is, {<em>ISBN, Book_title, Category</em>} is a default superkey for this relation schema.</p>
-<h2 id="candidate-key">Candidate key</h2>
+<h3 id="candidate-key">Candidate key</h3>
 <p>If any attribute is removed from the superkey subset, the remaining set of attributes can no longer serve as a superkey. Such a minimal set of attributes is a <strong>candidate key</strong> (also known as <strong>irreducible superkey</strong>)</p>
 <p>For example, the superkey {<em>ISBN, Book_title, Category</em>} is not a candidate key, since its subset {<em>ISBN</em>} is a minimal set of attributes that uniquely identify each tuple of <em>BOOK</em> relation. So, <em>ISBN</em> is a candidate key.</p>
-<h2 id="primary-key">Primary Key</h2>
+<h3 id="primary-key">Primary Key</h3>
 <p>A candidate key that is chosen to uniquely identify a tuple in a relation is known as <strong>primary key</strong>. Other candidate keys that are not chosen as primary key are known as <strong>alternate keys</strong>.</p>
-<h2 id="foreign-key">Foreign key</h2>
+<h3 id="foreign-key">Foreign key</h3>
 <p>Attribute of one relation can be accessed in another relation by enforcing a link between the attributes of two relations. This can be done by defining the attribute of one relation as the <strong>foreign key</strong> that refers to the primary key of another relation.</p>
-<h1 id="relation-db-creation">Relation DB Creation</h1>
+<h2 id="relation-db-creation">Relation DB Creation</h2>
 <ul>
 <li>Fundamental Structure: Table</li>
 </ul>
-<h2 id="database-integrity">Database Integrity</h2>
-<h3 id="domain-integrity">Domain Integrity</h3>
+<h3 id="database-integrity">Database Integrity</h3>
+<h4 id="domain-integrity">Domain Integrity</h4>
 <ul>
 <li>Domain Integrity is applied on the attribute and requires that every attribute A~i~ is a value from its domain D~i~</li>
 </ul>
-<h3 id="entity-integrity">Entity Integrity</h3>
+<h4 id="entity-integrity">Entity Integrity</h4>
 <ul>
 <li>Entity integrity defines restrictions on the tuples of a relation which ensures the accuracy and consistency of the database.</li>
 <li>It requires that each tuple in a realation is unique</li>
@@ -594,16 +565,16 @@
 </ul>
 </li>
 </ul>
-<h3 id="referential-integrity">Referential Integrity</h3>
+<h4 id="referential-integrity">Referential Integrity</h4>
 <ul>
 <li>Foreign keys establish links between tables</li>
 <li>A foreign key must &ldquo;point&rdquo; to an existing row with that primary key</li>
 </ul>
-<h3 id="semantic-integrity">Semantic Integrity</h3>
+<h4 id="semantic-integrity">Semantic Integrity</h4>
 <ul>
 <li>Semantic Integrity ensures that business and other logical rules are enforced</li>
 </ul>
-<h1 id="relational-table-rules">Relational Table Rules</h1>
+<h2 id="relational-table-rules">Relational Table Rules</h2>
 <ol>
 <li>All rows are formatted identically</li>
 <li>Rows are unsorted</li>
@@ -614,26 +585,26 @@
 <li>Each column (attribute) value is atomic</li>
 <li>Primary keys should be non-compound and minimal</li>
 </ol>
-<h1 id="normalization--normal-forms">Normalization &amp; Normal Forms</h1>
+<h2 id="normalization--normal-forms">Normalization &amp; Normal Forms</h2>
 <ul>
 <li>Normalization is required when a database is not properly designed through data modeling</li>
 <li>The most common is the &ldquo;spreadsheet design&rdquo; approach that many database designers use: <em>lump all data into a single table like a spreadsheet</em></li>
 <li>A database that suffers from <em>Spreadsheet Syndrome</em> is subject to numerous data redundancies, data anomalies and is generally inefficient.</li>
 </ul>
-<h2 id="approach-to-database-design-top-down-approach">Approach to Database Design: Top-Down Approach</h2>
+<h3 id="approach-to-database-design-top-down-approach">Approach to Database Design: Top-Down Approach</h3>
 <ul>
 <li>Start with a conceptual model based on grouping attributes into their natural entities</li>
 <li>Generally BCNF(Boyce-Code Normal Form) is sufficient</li>
 <li>Well designed conceptual models are generally in BCNF</li>
 <li><strong>Transactional databases</strong> should be normalized but <strong>Analytical databases</strong> should not</li>
 </ul>
-<h2 id="normal-forms">Normal Forms</h2>
+<h3 id="normal-forms">Normal Forms</h3>
 <ul>
 <li>Normal Forms are progressive</li>
 <li>Decomposition is at the heart of normalization</li>
 <li><strong>Attribute preservation</strong> property of decomposition</li>
 </ul>
-<h2 id="rules-for-decomposition">Rules for Decomposition</h2>
+<h3 id="rules-for-decomposition">Rules for Decomposition</h3>
 <ul>
 <li>For small databases, it may be possible for a database designer to decompose a relation schema through inspection.</li>
 <li>For large, complex database schemas, a direct decomposition is difficult as there can be multiple ways in which a relational schema can be decomposed.</li>
@@ -644,7 +615,7 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 10-04-2022</span>
+                <span>Updated on 12-21-2023</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
@@ -667,7 +638,7 @@
 </article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.120.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
-                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zexuan Meng</a></span></div>
         </div>
     </footer></div>
 
@@ -676,5 +647,5 @@
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/copy-tex.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

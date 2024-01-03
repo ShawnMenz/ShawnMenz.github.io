@@ -11,8 +11,8 @@
     <author>Zexuan Meng</author>
     <guid>https://shawnmenz.github.io/posts/hugo/</guid>
     <description><![CDATA[Create a new website Install Hugo # install on Mac brew install hugo # verify hugo version Create a site hugo new site site_name Add a theme Find a favorate theme and download it from Github
-cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml)
-theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily. For example, we add a new markdown file named first_post.]]></description>
+cd site_name git init git submodule add http://github.com/theme.git themes/theme_name Then, remember to update configuration file(config.toml). In this tutorial I choose the LoveIt theme
+theme = &#39;theme_name&#39; Add Content Simply using hugo new, we can add content easily.]]></description>
 </item>
 <item>
     <title>Basic R</title>
