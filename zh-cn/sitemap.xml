@@ -2,6 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://shawnmenz.github.io/zh-cn/publications/</loc><lastmod>2024-01-03T15:00:11-06:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://shawnmenz.github.io/publications/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="zh-cn"
+                    href="https://shawnmenz.github.io/zh-cn/publications/"
+                    /></url><url>
             <loc>https://shawnmenz.github.io/zh-cn/work/</loc><lastmod>2022-10-04T18:58:58-04:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="en"

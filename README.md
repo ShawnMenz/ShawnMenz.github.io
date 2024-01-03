@@ -2,25 +2,29 @@
 
 ## Version 2
 
-### 2.3
-
-- Implement Category function, blogs are organized well now.
-
 ### 2.2.1
 
-* I migrate the old repo from my git student account to current account. After I graduate, my college will take back the email. In that case, it will be troublesome to maintain the account.
+* Add Publication page for both English and Chinese sections.
+* Add Google Scholar info.
 
-### 2.1
+### 2.2.0
 
-* Hooray! the new version of my homepage!
+- Implement Category page, blogs are organized well now.
 
-* It's now powered by [Hugo](https://github.com/gohugoio/hugo) and [LoveIt](https://github.com/dillonzq/LoveIt) theme.
+### 2.1.1
 
-### 2.2
+* I migrate the old repo from my git student account to current account. After I obtained my Master's degree, the edu email will be unaccessible. In that case, it will be troublesome to maintain the previous account.
 
-* Implemented multilingual pages, now my homepage supports both English and Chinese
+### 2.1.0
+
+* Implement multilingual pages, now my homepage supports both English and Chinese
 * Update my CV, thanks for the help of [COE-Departmental Co-op of Northeastern University](https://coe.northeastern.edu/academics-experiential-learning/co-op-experiential-learning/co-op/). The advisors helped me revise my CV.
 * Upload some old notes and some new notes that I am currently working on.
+
+### 2.0.0
+
+* Hooray! the new version of my homepage!
+* It's now powered by [Hugo](https://github.com/gohugoio/hugo) and [LoveIt](https://github.com/dillonzq/LoveIt) theme.
 
 
 

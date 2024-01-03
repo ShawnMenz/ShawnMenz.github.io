@@ -2,6 +2,15 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://shawnmenz.github.io/publications/</loc><lastmod>2024-01-03T15:00:11-06:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="https://shawnmenz.github.io/zh-cn/publications/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://shawnmenz.github.io/publications/"
+                    /></url><url>
             <loc>https://shawnmenz.github.io/posts/llm/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/categories/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod><xhtml:link
                         rel="alternate"
@@ -12,7 +21,7 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/categories/"
                     /></url><url>
-            <loc>https://shawnmenz.github.io/categories/llm/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
+            <loc>https://shawnmenz.github.io/categories/large-language-model/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/posts/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
@@ -31,8 +40,6 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/"
                     /></url><url>
-            <loc>https://shawnmenz.github.io/categories/reinforcement-learning/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
-            <loc>https://shawnmenz.github.io/posts/trpo/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/categories/container/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/posts/docker/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/posts/uxdesign/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>

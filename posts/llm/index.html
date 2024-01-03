@@ -17,7 +17,7 @@ Zero-shot Learning This terminology means that the model can perform a task even
 <meta name="twitter:description" content="What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
 Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it."/>
 <meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://shawnmenz.github.io/posts/llm/" /><link rel="prev" href="https://shawnmenz.github.io/posts/trpo/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://shawnmenz.github.io/posts/llm/" /><link rel="prev" href="https://shawnmenz.github.io/posts/docker/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -45,7 +45,7 @@ Zero-shot Learning This terminology means that the model can perform a task even
             <a href="/" title="Shawn&#39;s Homepage">Home</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé"> CV </a><a class="menu-item" href="/work/" title="Learning from work"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of all of my blogs"> BLOG </a><a class="menu-item" href="/cv/" title="Please have a look at my résumé"> CV </a><a class="menu-item" href="/publications/" title="Publications"> Publications </a><a class="menu-item" href="/work/" title="Learning from work"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
@@ -63,7 +63,7 @@ Zero-shot Learning This terminology means that the model can perform a task even
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Why not have a look at my résumé">CV</a><a class="menu-item" href="/work/" title="Learning from work">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of all of my blogs">BLOG</a><a class="menu-item" href="/cv/" title="Please have a look at my résumé">CV</a><a class="menu-item" href="/publications/" title="Publications">Publications</a><a class="menu-item" href="/work/" title="Learning from work">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
@@ -75,7 +75,7 @@ Zero-shot Learning This terminology means that the model can perform a task even
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Brief Introduction of LLM</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/llm/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>LLM</a></span></div>
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/large-language-model/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Large Language Model</a></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="01-02-2024">01-02-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;523 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
@@ -144,7 +144,7 @@ Then explain your reasoning for how you improved the response.
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/trpo/" class="prev" rel="prev" title="Trust Region Policy Optimization"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Trust Region Policy Optimization</a></div>
+    <div class="post-nav"><a href="/posts/docker/" class="prev" rel="prev" title="Docker"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Docker</a></div>
 </div>
 </article></div>
             </main><footer class="footer">

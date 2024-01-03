@@ -16,15 +16,6 @@
 Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it.]]></description>
 </item>
 <item>
-    <title>Trust Region Policy Optimization</title>
-    <link>https://shawnmenz.github.io/posts/trpo/</link>
-    <pubDate>Thu, 21 Dec 2023 14:21:39 -0600</pubDate>
-    <author>Zexuan Meng</author>
-    <guid>https://shawnmenz.github.io/posts/trpo/</guid>
-    <description><![CDATA[Methods for Policy Optimization In reinforcement learning, the goal is to learn a policy, which is a strategy that specifies what action to take in each state of the environment. Most of the algorithms for policy optimization can be categorized into three major methods:
-policy iteration methods: estimate the value function under current policy and improve the policy. policy gradient methods: estimate the gradient of the expected return obtained from sample trajectories.]]></description>
-</item>
-<item>
     <title>Docker</title>
     <link>https://shawnmenz.github.io/posts/docker/</link>
     <pubDate>Sat, 09 Dec 2023 14:19:21 -0600</pubDate>
