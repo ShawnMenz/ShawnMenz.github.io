@@ -4,7 +4,17 @@
         <link>https://shawnmenz.github.io/posts/</link>
         <description>All Posts | Shawn&#39;s Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
-            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Tue, 02 Jan 2024 16:05:41 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Wed, 03 Jan 2024 14:40:50 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Fine-Tuning LLMs</title>
+    <link>https://shawnmenz.github.io/posts/ft/</link>
+    <pubDate>Wed, 03 Jan 2024 14:40:50 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/ft/</guid>
+    <description><![CDATA[What is Fine-tuning? Fine-tuning is taking a pre-trained model and training at least one internal model parameter (i.e. weight). In the context of LLMs, Fine-tuning means transforming a general-purpose base model into a specialized model for a particular use case.
+Why Fine-tune? Generally, a smaller (fine-tuned) model can often outperform larger (more expensive) models on the set of tasks on which it was trained.
+How to Fine-tune? Self-supervised Learning Self-supervised learning consists of training a model based on the inherent structure of the training data.]]></description>
+</item>
+<item>
     <title>A Brief Introduction of LLM</title>
     <link>https://shawnmenz.github.io/posts/llm/</link>
     <pubDate>Tue, 02 Jan 2024 16:05:41 -0600</pubDate>

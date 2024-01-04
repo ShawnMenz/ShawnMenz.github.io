@@ -11,8 +11,7 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/publications/"
                     /></url><url>
-            <loc>https://shawnmenz.github.io/posts/llm/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
-            <loc>https://shawnmenz.github.io/categories/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod><xhtml:link
+            <loc>https://shawnmenz.github.io/categories/</loc><lastmod>2024-01-03T14:40:50-06:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://shawnmenz.github.io/zh-cn/categories/"
@@ -21,8 +20,9 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/categories/"
                     /></url><url>
-            <loc>https://shawnmenz.github.io/categories/large-language-model/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
-            <loc>https://shawnmenz.github.io/posts/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod><xhtml:link
+            <loc>https://shawnmenz.github.io/posts/ft/</loc><lastmod>2024-01-03T14:40:50-06:00</lastmod></url><url>
+            <loc>https://shawnmenz.github.io/categories/large-language-model/</loc><lastmod>2024-01-03T14:40:50-06:00</lastmod></url><url>
+            <loc>https://shawnmenz.github.io/posts/</loc><lastmod>2024-01-03T14:40:50-06:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://shawnmenz.github.io/zh-cn/posts/"
@@ -31,7 +31,7 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/posts/"
                     /></url><url>
-            <loc>https://shawnmenz.github.io/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod><xhtml:link
+            <loc>https://shawnmenz.github.io/</loc><lastmod>2024-01-03T14:40:50-06:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="https://shawnmenz.github.io/zh-cn/"
@@ -40,6 +40,7 @@
                     hreflang="en"
                     href="https://shawnmenz.github.io/"
                     /></url><url>
+            <loc>https://shawnmenz.github.io/posts/llm/</loc><lastmod>2024-01-03T12:32:41-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/categories/container/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/posts/docker/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
             <loc>https://shawnmenz.github.io/posts/uxdesign/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
@@ -59,15 +60,6 @@
                     href="https://shawnmenz.github.io/work/"
                     /></url><url>
             <loc>https://shawnmenz.github.io/posts/basicr/</loc><lastmod>2023-12-21T18:09:39-06:00</lastmod></url><url>
-            <loc>https://shawnmenz.github.io/cv/</loc><lastmod>2022-08-05T20:56:32-04:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-cn"
-                        href="https://shawnmenz.github.io/zh-cn/cv/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://shawnmenz.github.io/cv/"
-                    /></url><url>
             <loc>https://shawnmenz.github.io/categories/documentation/</loc></url><url>
             <loc>https://shawnmenz.github.io/tags/</loc><xhtml:link
                         rel="alternate"

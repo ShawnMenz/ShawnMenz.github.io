@@ -4,32 +4,34 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>A Brief Introduction of LLM - Shawn&#39;s Homepage</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="A Brief Introduction of LLM" />
-<meta property="og:description" content="What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
-Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it." />
+        <title>Fine-Tuning LLMs - Shawn&#39;s Homepage</title><meta name="Description" content="Learn and Note"><meta property="og:title" content="Fine-Tuning LLMs" />
+<meta property="og:description" content="What is Fine-tuning? Fine-tuning is taking a pre-trained model and training at least one internal model parameter (i.e. weight). In the context of LLMs, Fine-tuning means transforming a general-purpose base model into a specialized model for a particular use case.
+Why Fine-tune? Generally, a smaller (fine-tuned) model can often outperform larger (more expensive) models on the set of tasks on which it was trained.
+How to Fine-tune? Self-supervised Learning Self-supervised learning consists of training a model based on the inherent structure of the training data." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://shawnmenz.github.io/posts/llm/" /><meta property="article:section" content="posts" />
-<meta property="article:published_time" content="2024-01-02T16:05:41-06:00" />
-<meta property="article:modified_time" content="2024-01-03T12:32:41-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+<meta property="og:url" content="https://shawnmenz.github.io/posts/ft/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-01-03T14:40:50-06:00" />
+<meta property="article:modified_time" content="2024-01-03T14:40:50-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="A Brief Introduction of LLM"/>
-<meta name="twitter:description" content="What is an LLM? LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.
-Zero-shot Learning This terminology means that the model can perform a task even if it has not been explicitly trained to do it."/>
+<meta name="twitter:title" content="Fine-Tuning LLMs"/>
+<meta name="twitter:description" content="What is Fine-tuning? Fine-tuning is taking a pre-trained model and training at least one internal model parameter (i.e. weight). In the context of LLMs, Fine-tuning means transforming a general-purpose base model into a specialized model for a particular use case.
+Why Fine-tune? Generally, a smaller (fine-tuned) model can often outperform larger (more expensive) models on the set of tasks on which it was trained.
+How to Fine-tune? Self-supervised Learning Self-supervised learning consists of training a model based on the inherent structure of the training data."/>
 <meta name="application-name" content="My cool site">
-<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://shawnmenz.github.io/posts/llm/" /><link rel="prev" href="https://shawnmenz.github.io/posts/docker/" /><link rel="next" href="https://shawnmenz.github.io/posts/ft/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<meta name="apple-mobile-web-app-title" content="My cool site"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/img/favicon.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://shawnmenz.github.io/posts/ft/" /><link rel="prev" href="https://shawnmenz.github.io/posts/llm/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css"></noscript><link rel="preload" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
         <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"></noscript><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "A Brief Introduction of LLM",
+        "headline": "Fine-Tuning LLMs",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
-            "@id": "https:\/\/shawnmenz.github.io\/posts\/llm\/"
-        },"genre": "posts","wordcount":  523 ,
-        "url": "https:\/\/shawnmenz.github.io\/posts\/llm\/","datePublished": "2024-01-02T16:05:41-06:00","dateModified": "2024-01-03T12:32:41-06:00","publisher": {
+            "@id": "https:\/\/shawnmenz.github.io\/posts\/ft\/"
+        },"genre": "posts","wordcount":  365 ,
+        "url": "https:\/\/shawnmenz.github.io\/posts\/ft\/","datePublished": "2024-01-03T14:40:50-06:00","dateModified": "2024-01-03T14:40:50-06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -49,7 +51,7 @@ Zero-shot Learning This terminology means that the model can perform a task even
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
-                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/llm/" selected>English</option></select>
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/posts/ft/" selected>English</option></select>
                 </a></div>
         </div>
     </div>
@@ -67,17 +69,17 @@ Zero-shot Learning This terminology means that the model can perform a task even
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
-                    <select class="language-select" onchange="location = this.value;"><option value="/posts/llm/" selected>English</option></select>
+                    <select class="language-select" onchange="location = this.value;"><option value="/posts/ft/" selected>English</option></select>
                 </a></div>
     </div>
 </header><main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">A Brief Introduction of LLM</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Fine-Tuning LLMs</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/large-language-model/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Large Language Model</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="01-02-2024">01-02-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;523 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="01-03-2024">01-03-2024</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;365 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -85,44 +87,46 @@ Zero-shot Learning This terminology means that the model can perform a task even
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#what-is-an-llm">What is an LLM?</a></li>
-    <li><a href="#zero-shot-learning">Zero-shot Learning</a></li>
-    <li><a href="#prompt-engineering">Prompt Engineering</a></li>
+    <li><a href="#what-is-fine-tuning">What is Fine-tuning?</a></li>
+    <li><a href="#why-fine-tune">Why Fine-tune?</a></li>
+    <li><a href="#how-to-fine-tune">How to Fine-tune?</a>
+      <ul>
+        <li><a href="#self-supervised-learning">Self-supervised Learning</a></li>
+        <li><a href="#supervised-learning">Supervised Learning</a></li>
+        <li><a href="#reinforcement-learning">Reinforcement Learning</a></li>
+      </ul>
+    </li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav></div>
-            </div><div class="content" id="content"><h2 id="what-is-an-llm">What is an LLM?</h2>
-<p>LLM is short for Large Language Model. All the LLMs are language models, but not all language models are LLMs. The distinctions between large and &lsquo;regular&rsquo; are 2 key properties, quantitatively and quanlitatively. Quantitatively means the number of parameters used in the model is pretty large. Qualitatively means that when a language model becomes large, something remarkble will happen.</p>
-<h2 id="zero-shot-learning">Zero-shot Learning</h2>
-<p>This terminology means that the model can perform a task even if it has not been explicitly trained to do it. Previously, if you want to achieve good result in a model, you need to explicitly train it on specific tasks. However, LLMs can do all kinds of language process related work without explicitly training.</p>
-<h2 id="prompt-engineering">Prompt Engineering</h2>
-<p>Building an LLM from scratch is extremely expensive. With the help of prompt engineering, we can make use of LLM out-of-box (i.e. not training any internal model parameters) while realizing a relatively high value of most of LLM use cases. From my perspective, LLMs can understand the natural language is because of the tokenization step. In this case, they cannot really &lsquo;understand&rsquo; the questions in the form of natural language. Thus, in some sense, we are “tricking” these language models to solve problems.</p>
-<p>To improve the quality of LLM responses, we can employ specific prompt engineering heuristics (tricks).</p>
+            </div><div class="content" id="content"><h2 id="what-is-fine-tuning">What is Fine-tuning?</h2>
+<p>Fine-tuning is taking a pre-trained model and training at least one internal model parameter (i.e. weight). In the context of LLMs, Fine-tuning means transforming a <strong>general-purpose</strong> base model into a <strong>specialized</strong> model for a particular use case.</p>
+<h2 id="why-fine-tune">Why Fine-tune?</h2>
+<p>Generally, a smaller (fine-tuned) model can often outperform larger (more expensive) models on the set of tasks on which it was trained.</p>
+<h2 id="how-to-fine-tune">How to Fine-tune?</h2>
+<h3 id="self-supervised-learning">Self-supervised Learning</h3>
+<p>Self-supervised learning consists of training a model based on the inherent structure of the training data. In this case, a potential use of this approach is prediction.</p>
+<h3 id="supervised-learning">Supervised Learning</h3>
+<p>Supervised Learning may be the most popular way to fine-tune a model. This approach involves training a model on input-output pairs for a particular task.</p>
+<p>The key step in supervised learning is curating a dataset. We can apply Prompt Engineering techniques to design our own datasets or adopt the existing ones.</p>
+<p>A high-level procedure for supervised model fine-tuning should be like:</p>
 <ul>
-<li><strong>Be Descriptive (More details will be better)</strong>: try to include more details in your questions or requests.</li>
-<li><strong>Give Examples</strong>: Adopt the concept of few-shot learning, provide several examples in your prompt will help a lot.</li>
-<li><strong>Use Structured Text</strong>: Organize the structure of the prompt. For example, use ALL CAPS for emphasis, adopt markdown format or use JSON to organize information, etc.</li>
-<li><strong>Chain of Thought</strong>: Guide the LLM to think step by step. Try to break down complex problems into manageable sub-problems . You can simply include &ldquo;Let&rsquo;s think step by step&rdquo; in the prompt. However, in the latest version of some LLMs (like ChatGPT), this strategy doesn&rsquo;t seems helpful because they may already think step-by-step.</li>
-<li><strong>Chatbot Personas</strong>: Prompt the LLM to take on a particular persona. You may not know the best way to describe your problem to the LLM sometimes, but it helpful if you know who would help you as an expert to solve the problem.</li>
-<li><strong>Flipped Approach</strong>: This is the most exciting approach to treat LLMs as assistants. Since we may not know what the LLM knows or how it thinks, why not flip the characters? Let the LLMs to ask us questions and help us come up with some certain ideas.
-<pre tabindex="0"><code>Before:
-What is Reinforcement Learning?
-
-After:
-I want you to ask me questions to help me come up with the
-concept of Reinforcement Learning.
-Ask me one question at a time to keep things conversational.
-</code></pre></li>
-<li><strong>Refilect, Review, and Refine</strong>: Ask the LLM to review its previous responses or even your prompts and rewrite to refine and improve them.
-<pre tabindex="0"><code>Example:
-Review your previous response, pinpoint areas for enhancement
-and offer an improved version.
-Then explain your reasoning for how you improved the response.
-</code></pre></li>
+<li>Choose fine-tuning task</li>
+<li>Prepare training dataset</li>
+<li>Choose a base model</li>
+<li>Fine-tune model via supervised learning</li>
+<li>Evaluate model performance</li>
 </ul>
+<p>When it comes to fine-tune a model with huge amount of parameters, it&rsquo;s important to choose the right strategy for fine-tuning. Here are 3 generic options:</p>
+<ul>
+<li><strong>Retrain all parameters</strong>: Train all internal model parameters which is also called full parameter tuning. It&rsquo;s intuitive and conceptually simple, but it&rsquo;s also computationally expensive. Besides, it cannot overcome the problem of &lsquo;forgetting&rsquo;.</li>
+<li><strong>Transfer Learning (TL)</strong>: Preserve the useful features the model has learned from past training while applying the model to a new task. This approach will leave most of the parameters untouched, which may not be computationally expensive. However, it still cannot mitigate the problem of &lsquo;forgetting&rsquo;.</li>
+<li><strong>Parameter Efficient Fine-tuning (PEFT)</strong>: PEFT involves augmenting a base model with a relatively small number of trainable parameters. One of PEFT methods is the popular LoRA(Low-Rank Adaptation).</li>
+</ul>
+<h3 id="reinforcement-learning">Reinforcement Learning</h3>
+<p>Reinforcement Learning (RL) is another way to fine-tune a model. RL uses a reward model to guide the training of the base model. The basic idea is to train the reward model to score language model completions. In this case, the model can understand the preference of human.</p>
 <h2 id="reference">Reference</h2>
-<p><a href="https://towardsdatascience.com/a-practical-introduction-to-llms-65194dda1148" target="_blank" rel="noopener noreffer ">A Practical Introduction to LLMs</a></p>
-<p><a href="https://towardsdatascience.com/prompt-engineering-how-to-trick-ai-into-solving-your-problems-7ce1ed3b553f" target="_blank" rel="noopener noreffer ">Prompt Engineering: How to Trick AI into Solving Your Problems</a></p>
+<p><a href="https://towardsdatascience.com/fine-tuning-large-language-models-llms-23473d763b91" target="_blank" rel="noopener noreffer ">Fine-Tuning Large Language Models (LLMs)</a></p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
@@ -144,8 +148,7 @@ Then explain your reasoning for how you improved the response.
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/docker/" class="prev" rel="prev" title="Docker"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Docker</a>
-            <a href="/posts/ft/" class="next" rel="next" title="Fine-Tuning LLMs">Fine-Tuning LLMs<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+    <div class="post-nav"><a href="/posts/llm/" class="prev" rel="prev" title="A Brief Introduction of LLM"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>A Brief Introduction of LLM</a></div>
 </div>
 </article></div>
             </main><footer class="footer">
