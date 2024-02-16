@@ -4,7 +4,19 @@
         <link>https://shawnmenz.github.io/categories/large-language-model/</link>
         <description>Large Language Model - Category - Shawn&#39;s Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
-            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Wed, 03 Jan 2024 14:40:50 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/large-language-model/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Mon, 12 Feb 2024 12:47:01 -0600</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/large-language-model/" rel="self" type="application/rss+xml" /><item>
+    <title>Host open-source LLMs on local machines</title>
+    <link>https://shawnmenz.github.io/posts/hostllmlocal/</link>
+    <pubDate>Mon, 12 Feb 2024 12:47:01 -0600</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/hostllmlocal/</guid>
+    <description><![CDATA[This note demonstrates how to initiate an endpoint with FastChat for local LLM application in AutoGen.
+We only use FastChat here for hosting LLMs. However, it could also be used for training, and evaluating LLMs.
+Preparation Install FastChat with pip.
+pip3 install &#34;fschat[model_worker,webui]&#34; Some tutorials also recommend to clone FastChat from github, but it seems not work for me. After cloning the repository, I cannot start the server (controller).
+Now create a directory for your project and download the model checkpoint or import from Hugging Face.]]></description>
+</item>
+<item>
     <title>Fine-Tuning LLMs</title>
     <link>https://shawnmenz.github.io/posts/ft/</link>
     <pubDate>Wed, 03 Jan 2024 14:40:50 -0600</pubDate>
