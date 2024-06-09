@@ -4,7 +4,18 @@
         <link>https://shawnmenz.github.io/categories/others/</link>
         <description>Others - Category - Shawn&#39;s Homepage</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>mr.zexuan.meng@gmail.com (Zexuan Meng)</managingEditor>
-            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Tue, 04 Oct 2022 22:47:27 -0400</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/others/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>mr.zexuan.meng@gmail.com (Zexuan Meng)</webMaster><lastBuildDate>Sun, 13 Nov 2022 22:24:38 -0500</lastBuildDate><atom:link href="https://shawnmenz.github.io/categories/others/" rel="self" type="application/rss+xml" /><item>
+    <title>A Brief Introduction of UX Design</title>
+    <link>https://shawnmenz.github.io/posts/uxdesign/</link>
+    <pubDate>Sun, 13 Nov 2022 22:24:38 -0500</pubDate>
+    <author>Zexuan Meng</author>
+    <guid>https://shawnmenz.github.io/posts/uxdesign/</guid>
+    <description><![CDATA[The basics of user experience design Definitions User experience: How a person, the user, feels about interacting with, or experiencing, a product.
+Product: A good, service or feature.
+Characteristics of a good user experience Primary characteristics
+usable Equitable enjoyable useful User experience career Interaction designer: Interaction designers focus on designing the experience of a product and how it functions. Visual designer: Visual designers focus on how a product or technology looks.]]></description>
+</item>
+<item>
     <title>HUGO</title>
     <link>https://shawnmenz.github.io/posts/hugo/</link>
     <pubDate>Tue, 04 Oct 2022 22:47:27 -0400</pubDate>

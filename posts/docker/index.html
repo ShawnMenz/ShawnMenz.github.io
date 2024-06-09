@@ -10,7 +10,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://shawnmenz.github.io/posts/docker/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-12-09T14:19:21-06:00" />
-<meta property="article:modified_time" content="2023-12-21T18:09:39-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
+<meta property="article:modified_time" content="2024-06-09T18:09:39-06:00" /><meta property="og:site_name" content="Shawn&#39;s Homepage" />
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker"/>
@@ -28,8 +28,8 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/shawnmenz.github.io\/posts\/docker\/"
-        },"genre": "posts","wordcount":  540 ,
-        "url": "https:\/\/shawnmenz.github.io\/posts\/docker\/","datePublished": "2023-12-09T14:19:21-06:00","dateModified": "2023-12-21T18:09:39-06:00","publisher": {
+        },"genre": "posts","wordcount":  1165 ,
+        "url": "https:\/\/shawnmenz.github.io\/posts\/docker\/","datePublished": "2023-12-09T14:19:21-06:00","dateModified": "2024-06-09T18:09:39-06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
                 "@type": "Person",
@@ -45,7 +45,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
             <a href="/" title="Shawn&#39;s Homepage">Home</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of my blogs"> BLOG </a><a class="menu-item" href="/publications/" title="Publications"> Publications </a><a class="menu-item" href="/work/" title="What I have learned from work"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+            <div class="menu-inner"><a class="menu-item" href="/categories/" title="Categories of my blogs"> Categories </a><a class="menu-item" href="/posts/" title="Archive of my blogs"> BLOG </a><a class="menu-item" href="/publications/" title="Publications"> Publications </a><a class="menu-item" href="/work/" title="About me"> About </a><span class="menu-item delimiter"></span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                     <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
                 </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
                     <i class="fa fa-globe" aria-hidden="true"></i>                      
@@ -63,7 +63,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of my blogs">BLOG</a><a class="menu-item" href="/publications/" title="Publications">Publications</a><a class="menu-item" href="/work/" title="What I have learned from work">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/categories/" title="Categories of my blogs">Categories</a><a class="menu-item" href="/posts/" title="Archive of my blogs">BLOG</a><a class="menu-item" href="/publications/" title="Publications">Publications</a><a class="menu-item" href="/work/" title="About me">About</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
             </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
                     <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
@@ -76,8 +76,8 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/container/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Container</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="12-09-2023">12-09-2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;540 words&nbsp;
-                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="12-09-2023">12-09-2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1165 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
@@ -93,6 +93,21 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
     </li>
     <li><a href="#image-and-runtime">Image and Runtime</a></li>
     <li><a href="#cgroups-namespace-and-rootfs">Cgroups, Namespace, and rootfs</a></li>
+    <li><a href="#after-installed-docker">After installed Docker</a></li>
+    <li><a href="#docker-commands">Docker commands</a>
+      <ul>
+        <li><a href="#image">Image</a></li>
+        <li><a href="#container">Container</a></li>
+        <li><a href="#save-container">Save container</a></li>
+        <li><a href="#share-image">Share image</a></li>
+      </ul>
+    </li>
+    <li><a href="#docker-storage">Docker storage</a>
+      <ul>
+        <li><a href="#volume">Volume</a></li>
+        <li><a href="#quick-example">Quick example</a></li>
+      </ul>
+    </li>
     <li><a href="#reference">Reference</a></li>
   </ul>
 </nav></div>
@@ -134,14 +149,162 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 <li>Cgroups - Limit container resource usage</li>
 <li>rootfs - The container filesystem</li>
 </ul>
-<h2 id="reference">Reference</h2>
+<h2 id="after-installed-docker">After installed Docker</h2>
+<p>Start Docker</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl start docker
+</span></span></code></pre></div><p>Make Docker always run after reboot the machine</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl <span class="nb">enable</span> docker
+</span></span></code></pre></div><p>Here are some commands that you may need to fix potential problems or check status.</p>
+<p>Reload daemon</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl daemon-reload
+</span></span></code></pre></div><p>Restart Docker</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div><p>Check Docker status</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl status docker
+</span></span></code></pre></div><h2 id="docker-commands">Docker commands</h2>
+<h3 id="image">Image</h3>
+<p>Image is a template for creating Docker environment.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># Search images: search nginx image in docker hub</span>
+</span></span><span class="line"><span class="cl">docker search nginx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Download images:</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># download nginx image from docker hub</span>
+</span></span><span class="line"><span class="cl">docker pull nginx
+</span></span><span class="line"><span class="cl"><span class="c1"># install specific version</span>
+</span></span><span class="line"><span class="cl">docker pull nginx:latest
+</span></span><span class="line"><span class="cl">docker pull nginx:1.26.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Check image list</span>
+</span></span><span class="line"><span class="cl">docker images
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove (delete) image</span>
+</span></span><span class="line"><span class="cl">docker rmi
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Remove all docker images</span>
+</span></span><span class="line"><span class="cl">docker image prune -a
+</span></span></code></pre></div><h3 id="container">Container</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># run docker</span>
+</span></span><span class="line"><span class="cl">docker run
+</span></span><span class="line"><span class="cl"><span class="c1"># run a pytorch docker with name mypytorch in the background</span>
+</span></span><span class="line"><span class="cl">docker run -d --name mypytorch pytorch/pytorch
+</span></span><span class="line"><span class="cl"><span class="c1"># publish a container&#39;s port to the host. 88 is host port, 80 is container port.</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 88 should be unique because it&#39;s port on host</span>
+</span></span><span class="line"><span class="cl">docker run -p 88:80
+</span></span><span class="line"><span class="cl"><span class="c1"># run a docker with all gpus, keep STDIN open (-i) and allocate a pseudo-TTY (-t)</span>
+</span></span><span class="line"><span class="cl">docker run -t -i -d --gpus all --name mypytorch pytorch/pytorch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># check docker list</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># show containers that are running</span>
+</span></span><span class="line"><span class="cl">docker ps
+</span></span><span class="line"><span class="cl"><span class="c1"># show all containers including those are not running</span>
+</span></span><span class="line"><span class="cl">docker ps -a
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># stop docker</span>
+</span></span><span class="line"><span class="cl">docker stop
+</span></span><span class="line"><span class="cl"><span class="c1"># stop a docker with name mypytorch</span>
+</span></span><span class="line"><span class="cl">docker stop mypytorch
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># start docker</span>
+</span></span><span class="line"><span class="cl">docker start
+</span></span><span class="line"><span class="cl"><span class="c1"># start docker with CONTAINER ID 4056</span>
+</span></span><span class="line"><span class="cl">docker start <span class="m">4056</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># reboot docker</span>
+</span></span><span class="line"><span class="cl">docker restart
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># check docker status</span>
+</span></span><span class="line"><span class="cl">docker stats
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># check docker log</span>
+</span></span><span class="line"><span class="cl">docker logs
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># delete docker</span>
+</span></span><span class="line"><span class="cl">docker rm
+</span></span><span class="line"><span class="cl"><span class="c1"># delete all the dockers</span>
+</span></span><span class="line"><span class="cl">docker rm -f <span class="k">$(</span>docker ps -aq<span class="k">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># access docker</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># access docker with name mypytorch with a terminal</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it mypytorch /bin/bash
+</span></span><span class="line"><span class="cl"><span class="c1"># access docker with CONTAINER ID 4056 with a terminal</span>
+</span></span><span class="line"><span class="cl">docker <span class="nb">exec</span> -it <span class="m">4056</span> /bin/bash
+</span></span></code></pre></div><p>Note: the <code>docker exec -it</code> command:</p>
+<p>The option <code>-it</code> means creating an interactive session with a pseudo-TTY in the Docker container (set up a terminal within the docker). It combines 2 flags, <code>-i</code> and <code>-t</code>.</p>
+<ul>
+<li><strong>&rsquo;-i&rsquo; or &lsquo;&ndash;interative&rsquo;</strong>: This flag keeps the <strong>standard input (STDIN)</strong> open for the command you are running in the container.</li>
+<li><strong>&rsquo;-t&rsquo; or &lsquo;&ndash;tty&rsquo;</strong>: This flag allocates a pseudo-TTY (pseudo-teletypewriter). It simulates a terminal.</li>
+</ul>
+<p>Before running with gpus, you may need to do:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey <span class="p">|</span> sudo apt-key add -
+</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list <span class="p">|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+</span></span><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install -y nvidia-docker2
+</span></span><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div><h3 id="save-container">Save container</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># commit</span>
+</span></span><span class="line"><span class="cl">docker commit
+</span></span><span class="line"><span class="cl"><span class="c1"># commit a image with name mypytorch with a message with repository name mypytorch and tag v1.0</span>
+</span></span><span class="line"><span class="cl">docker commit -m <span class="s2">&#34;init commit&#34;</span> mypytorch mypytorch:v1.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># save</span>
+</span></span><span class="line"><span class="cl">docker save
+</span></span><span class="line"><span class="cl"><span class="c1"># save image repository mypytorch with tag v1.0, output a tar file</span>
+</span></span><span class="line"><span class="cl">docker save -o mypytorch.tar mypytorch:v1.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># load</span>
+</span></span><span class="line"><span class="cl">docker load
+</span></span><span class="line"><span class="cl"><span class="c1"># load tar file mypytorch.tar</span>
+</span></span><span class="line"><span class="cl">docker load -i mypytorch.tar
+</span></span></code></pre></div><h3 id="share-image">Share image</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># login to docker hub</span>
+</span></span><span class="line"><span class="cl">docker login
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># add tag to a image</span>
+</span></span><span class="line"><span class="cl">docker tag mypytorch:v1.0 username/newname:v1.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># push image</span>
+</span></span><span class="line"><span class="cl">docker push username/newname:v1.0
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># remember always add a latest version</span>
+</span></span><span class="line"><span class="cl">docker tag mypytorch:v1.0 username/newname:latest
+</span></span><span class="line"><span class="cl">docker push username/newname:latest
+</span></span></code></pre></div><h2 id="docker-storage">Docker storage</h2>
+<h3 id="volume">Volume</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># volume list</span>
+</span></span><span class="line"><span class="cl">docker volume ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># create volume</span>
+</span></span><span class="line"><span class="cl">docker volume create volumename
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># inspect info of a certain volume</span>
+</span></span><span class="line"><span class="cl">docker volume inspect volumename
+</span></span></code></pre></div><h3 id="quick-example">Quick example</h3>
+<p>How to create docker volume and link the volume with a project store in the host machine directory: /workspace/RL_proj?</p>
+<ul>
+<li>Create the Docker volume</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker volume create rl_proj_volume
+</span></span></code></pre></div><ul>
+<li>Run the Docker container with the volume linked</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d --name my_rl_proj_container -v /workspace/RL_proj:/app my_image
+</span></span></code></pre></div><ul>
+<li>Verify the volume inside the container</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it my_rl_proj_container /bin/bash
+</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /app
+</span></span><span class="line"><span class="cl">ls
+</span></span></code></pre></div><h2 id="reference">Reference</h2>
 <p><a href="https://blog.bytebytego.com/p/a-crash-course-in-docker" target="_blank" rel="noopener noreffer ">A Crash Course in Docker</a></p>
-<p><a href="https://docs.docker.com/" target="_blank" rel="noopener noreffer ">Docker docs</a></p>
+<p><a href="https://docs.docker.com/engine/" target="_blank" rel="noopener noreffer ">Docker Engine</a></p>
+<p><a href="https://www.bilibili.com/video/BV1Zn4y1X7AZ/?p=1&amp;vd_source=d43f2f22ca845cf8173e8ed054690b87" target="_blank" rel="noopener noreffer ">尚硅谷3小时速通Docker教程</a> (Courses are delivered in Chinese)</p>
 </div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 12-21-2023</span>
+                <span>Updated on 06-09-2024</span>
             </div></div>
         <div class="post-info-line">
             <div class="post-info-md"></div>
