@@ -28,7 +28,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/shawnmenz.github.io\/posts\/docker\/"
-        },"genre": "posts","wordcount":  1234 ,
+        },"genre": "posts","wordcount":  1267 ,
         "url": "https:\/\/shawnmenz.github.io\/posts\/docker\/","datePublished": "2023-12-09T14:19:21-06:00","dateModified": "2024-06-10T18:09:39-06:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -76,7 +76,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Docker</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Zexuan Meng</a></span>&nbsp;<span class="post-category">included in <a href="/categories/container/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Container</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="12-09-2023">12-09-2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1234 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="12-09-2023">12-09-2023</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;1267 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
@@ -105,12 +105,12 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
     <li><a href="#docker-storage">Docker storage</a>
       <ul>
         <li><a href="#volume">Volume</a></li>
-        <li><a href="#quick-example">Quick example</a></li>
       </ul>
     </li>
     <li><a href="#faq">FAQ</a>
       <ul>
         <li><a href="#docker-extensions-of-vs-code-is-not-working">Docker extensions of VS Code is not working.</a></li>
+        <li><a href="#gpu-driver-fails-to-load">GPU driver fails to load</a></li>
       </ul>
     </li>
     <li><a href="#reference">Reference</a></li>
@@ -240,14 +240,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 <li><strong>&rsquo;-i&rsquo; or &lsquo;&ndash;interative&rsquo;</strong>: This flag keeps the <strong>standard input (STDIN)</strong> open for the command you are running in the container.</li>
 <li><strong>&rsquo;-t&rsquo; or &lsquo;&ndash;tty&rsquo;</strong>: This flag allocates a pseudo-TTY (pseudo-teletypewriter). It simulates a terminal.</li>
 </ul>
-<p>Before running with gpus, you may need to do:</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
-</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey <span class="p">|</span> sudo apt-key add -
-</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list <span class="p">|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
-</span></span><span class="line"><span class="cl">sudo apt-get update
-</span></span><span class="line"><span class="cl">sudo apt-get install -y nvidia-docker2
-</span></span><span class="line"><span class="cl">sudo systemctl restart docker
-</span></span></code></pre></div><h3 id="save-container">Save container</h3>
+<h3 id="save-container">Save container</h3>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># commit</span>
 </span></span><span class="line"><span class="cl">docker commit
 </span></span><span class="line"><span class="cl"><span class="c1"># commit a image with name mypytorch with a message with repository name mypytorch and tag v1.0</span>
@@ -277,6 +270,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 </span></span><span class="line"><span class="cl">docker push username/newname:latest
 </span></span></code></pre></div><h2 id="docker-storage">Docker storage</h2>
 <h3 id="volume">Volume</h3>
+<p>If you save your data on docker directly, there will be risk of being deleted by removing the docker. In this case, it&rsquo;s better to store the data permanently in a volume. It could be considered as a directory or a file.</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="c1"># volume list</span>
 </span></span><span class="line"><span class="cl">docker volume ls
 </span></span><span class="line"><span class="cl">
@@ -285,22 +279,16 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># inspect info of a certain volume</span>
 </span></span><span class="line"><span class="cl">docker volume inspect volumename
-</span></span></code></pre></div><h3 id="quick-example">Quick example</h3>
-<p>How to create docker volume and link the volume with a project store in the host machine directory: /workspace/RL_proj?</p>
-<ul>
-<li>Create the Docker volume</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker volume create rl_proj_volume
-</span></span></code></pre></div><ul>
-<li>Run the Docker container with the volume linked</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker run -d --name my_rl_proj_container -v /workspace/RL_proj:/app my_image
-</span></span></code></pre></div><ul>
-<li>Verify the volume inside the container</li>
-</ul>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">docker <span class="nb">exec</span> -it my_rl_proj_container /bin/bash
-</span></span><span class="line"><span class="cl"><span class="nb">cd</span> /app
-</span></span><span class="line"><span class="cl">ls
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># run a docker with volume (must be absolute path)</span>
+</span></span><span class="line"><span class="cl">docker run -it -v /host/abs/path:/path/in/docker imagename
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># trick</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># can solve permission deny problem</span>
+</span></span><span class="line"><span class="cl">docker run --privileged<span class="o">=</span>ture
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># quick example: bind mount</span>
+</span></span><span class="line"><span class="cl">sudo docker run -it -d --gpus all --name RL_reasoning --privileged<span class="o">=</span><span class="nb">true</span> -v /home/UNT/zm0166/Documents/RL_reasoning:/workspace/RL_reasoning pytorch/pytorch
 </span></span></code></pre></div><h2 id="faq">FAQ</h2>
 <h3 id="docker-extensions-of-vs-code-is-not-working">Docker extensions of VS Code is not working.</h3>
 <p>While running docker command, the command line shows: Cannot connect to the Docker daemon at <code>unix:///path/to/.docker/desktop/docker.sock</code>. Is the docker daemon running?</p>
@@ -310,6 +298,14 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">ln -s /var/run/docker.sock /path/to/.docker/desktop/docker.sock
 </span></span></code></pre></div><p>Restart docker service:</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo systemctl restart docker
+</span></span></code></pre></div><h3 id="gpu-driver-fails-to-load">GPU driver fails to load</h3>
+<p>Before running with GPUs, you may need to do:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl"><span class="nv">distribution</span><span class="o">=</span><span class="k">$(</span>. /etc/os-release<span class="p">;</span><span class="nb">echo</span> <span class="nv">$ID$VERSION_ID</span><span class="k">)</span>
+</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey <span class="p">|</span> sudo apt-key add -
+</span></span><span class="line"><span class="cl">curl -s -L https://nvidia.github.io/nvidia-docker/<span class="nv">$distribution</span>/nvidia-docker.list <span class="p">|</span> sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+</span></span><span class="line"><span class="cl">sudo apt-get update
+</span></span><span class="line"><span class="cl">sudo apt-get install -y nvidia-docker2
+</span></span><span class="line"><span class="cl">sudo systemctl restart docker
 </span></span></code></pre></div><h2 id="reference">Reference</h2>
 <p><a href="https://blog.bytebytego.com/p/a-crash-course-in-docker" target="_blank" rel="noopener noreffer ">A Crash Course in Docker</a></p>
 <p><a href="https://docs.docker.com/engine/" target="_blank" rel="noopener noreffer ">Docker Engine</a></p>
