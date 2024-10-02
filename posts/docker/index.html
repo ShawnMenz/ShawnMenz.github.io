@@ -288,7 +288,7 @@ From Bare Metal to Docker Bare Metal: The applications ran directly on the physi
 </span></span><span class="line"><span class="cl">docker run --privileged<span class="o">=</span>ture
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl"><span class="c1"># quick example: bind mount</span>
-</span></span><span class="line"><span class="cl">sudo docker run -it -d --gpus all --name RL_reasoning --privileged<span class="o">=</span><span class="nb">true</span> -v /home/UNT/zm0166/Documents/RL_reasoning:/workspace/RL_reasoning pytorch/pytorch
+</span></span><span class="line"><span class="cl">sudo docker run -it -d --gpus all --name RL_reasoning --privileged<span class="o">=</span><span class="nb">true</span> -v /path/to/project:/workspace/project pytorch/pytorch
 </span></span></code></pre></div><h2 id="faq">FAQ</h2>
 <h3 id="docker-extensions-of-vs-code-is-not-working">Docker extensions of VS Code is not working.</h3>
 <p>While running docker command, the command line shows: Cannot connect to the Docker daemon at <code>unix:///path/to/.docker/desktop/docker.sock</code>. Is the docker daemon running?</p>
